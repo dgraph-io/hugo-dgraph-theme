@@ -1,15 +1,15 @@
-Dgraph
+# Dgraph
 
-Dgraph blog theme is an ideal responsive theme for your blog. It has a list view with a image for each post and a beautiful page for individual posts. You can see it live in action on the [Dgraph Blog](https://open.dgraph.io)
+Dgraph blog theme is an ideal responsive theme for your blog. It has a list view with a image for each post and a beautiful page for individual posts. You can see it live in action on the [Dgraph Blog](https://open.dgraph.io).
 
-![Dgraph screenshot](imgaes/screenshot.png)
+![Dgraph screenshot](images/screenshot.png)
 
 ## Features
 
-	* Responsive
-	* Suited for personal or company blog
-	* Support for [discourse](https://www.discourse.org) for commenting
-	* Syntax highlighting for code samples
+* Responsive
+* Suited for personal or company blog
+* Support for [discourse](https://www.discourse.org) for commenting
+* Syntax highlighting for code samples
 
 ## Installation
 
@@ -22,7 +22,7 @@ Dgraph blog theme is an ideal responsive theme for your blog. It has a list view
 
 ## Site variables
 
-Please see the sample [`config.toml`]((https://github.com/dgraph-io/hugo-dgraph-theme/blob/master/exampleSite/config.toml) under the `exampleSite` directory.
+Please see the sample [`config.toml`](https://github.com/dgraph-io/hugo-dgraph-theme/blob/master/exampleSite/config.toml) under the `exampleSite` directory.
 
 ## Contributing
 
@@ -33,3 +33,9 @@ We follow [Git flow](http://nvie.com/posts/a-successful-git-branching-model/). S
 ## License
 
 Licensed under the MIT License. See the [LICENSE](https://github.com/dgraph-io/hugo-dgraph-theme/blob/master/LICENSE.md) file for more details.
+
+
+## Credits
+
+* [Steve Francia](//github.com/spf13) for creating Hugo and the awesome community around the project.
+* [Danijel Grabez](https://twitter.com/danijel_grabez) for designing and coding up the theme.
