@@ -6,16 +6,16 @@ author = "Steve Francia"
   googleAnalytics = ""
 
   # To integrate discourse commenting system and also to display discourse in the footer.
-  discourse = ""
+  discourse = "https://discuss.dgraph.io"
 
   # The path of the repo excluding https://github.com. This would work only for public repos. It is used for displaying stars for the repo.
   github = "dgraph-io/dgraph"
 
   # Website url, used to have a link in the footer as well as on the top.
-  website = ""
+  website = "https://dgraph.io"
 
   # Twitter handle for sharing the post via
-  twitter = ""
+  twitter = "dgraphlabs"
 
 copyright = "Copyright (c) 2008 - 2014, Steve Francia; all rights reserved."
 

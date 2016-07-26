@@ -267,7 +267,7 @@
       <div class="row">
         <div class="col-12 col-desktop-10 push-desktop-1 col-hd-8 push-hd-2">
           <header class="page-intro__header">
-          <div class="article__meta"><span class="article__meta-item article__date">{{ with .Site.Params.DateForm }}{{ $.Date.Format . }}{{ else }}{{ $.Date.Format "Mon, Jan 2, 2006" }}{{ end }} by {{partial "author_name.html" .}}</span></div>
+          <div class="article__meta"><span class="article__meta-item article__date">{{ with .Site.Params.DateForm }}{{ $.Date.Format . }}{{ else }}{{ $.Date.Format "Mon, Jan 2, 2006" }}{{ end }} by {{.Params.author}}</span></div>
             <h1 class="page-intro__title page-intro__title--blog">{{ .Title }}</h1>
           </header>
           <div class="page-intro__footer">
@@ -302,8 +302,6 @@
           <div class="container">
             <div class="row">
               <div class="col-12 col-desktop-10 push-desktop-1 col-hd-8 push-hd-2">
-              {{ partial "author_profile.html" .}}
-              {{ partial "editor_profile.html" .}}
               </div>
             </div>
           </div>
