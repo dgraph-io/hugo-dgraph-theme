@@ -1,0 +1,22 @@
+baseurl = "http://hugo.spf13.com/"
+title = "Hugo Themes"
+author = "Steve Francia"
+
+[params]
+  googleAnalytics = ""
+
+  # To integrate discourse commenting system and also to display discourse in the footer.
+  discourse = ""
+
+  # The path of the repo excluding https://github.com. This would work only for public repos. It is used for displaying stars for the repo.
+  github = "dgraph-io/dgraph"
+
+  # Website url, used to have a link in the footer as well as on the top.
+  website = ""
+
+  # Twitter handle for sharing the post via
+  twitter = ""
+
+copyright = "Copyright (c) 2008 - 2014, Steve Francia; all rights reserved."
+
+

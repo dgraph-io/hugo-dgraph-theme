@@ -1,0 +1,21 @@
+<header id="page-header" class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-desktop-4">
+        <figure class="page-logo"><a href="/"><img src="/images/logo.svg" width="233" height="70" alt=""></a></figure>
+				{{if .Site.Params.github}}
+				<a href="https://github.com/{{.Site.Params.github}}" data-style="mega" data-count-href="/{{.Site.Params.github}}/stargazers" data-count-api="/repos/{{.Site.Params.github}}#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star us on GitHub" class="github-button">Star</a>
+      </div>
+			{{end}}
+      <div class="col-12 col-desktop-8">
+        <nav class="page-nav">
+          <ul class="page-nav__list">
+						{{if .Site.Params.demo}}
+						<li class="page-nav__item"><a href="{{.Site.Params.demo}}" title="Website" class="button button--outline page-nav__link page-nav__link--button">Demo</a></li>
+						{{end}}
+          </ul>
+        </nav>
+      </div><a href="javascript:void(0)" title="Site Navigation" id="page-nav-button" class="button page-nav-button">Menu</a>
+    </div>
+  </div>
+</header>
