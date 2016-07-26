@@ -13,12 +13,14 @@ Dgraph blog theme is an ideal responsive theme for your blog. It has a list view
 
 ## Installation
 
-	Inside the folder of your Hugo site run:
+Inside the folder of your Hugo site run:
 
-	$ cd themes
-	$ git clone https://github.com/dgraph-io/hugo-dgraph-theme
+```
+$ cd themes
+$ git clone https://github.com/dgraph-io/hugo-dgraph-theme
+```
 
-	For more information read the official [setup guide](//gohugo.io/overview/installing/) of Hugo.
+For more information read the official [setup guide](//gohugo.io/overview/installing/) of Hugo.
 
 ## Site variables
 
