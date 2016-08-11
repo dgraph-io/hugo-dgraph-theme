@@ -2,7 +2,7 @@
 
 Dgraph blog theme is an ideal responsive theme for your blog. It has a list view with a image for each post and a beautiful page for individual posts. You can see it live in action on the [Dgraph Blog](https://open.dgraph.io).
 
-![Dgraph screenshot](images/screenshot.png)
+![Dgraph screenshot](https://raw.githubusercontent.com/dgraph-io/hugo-dgraph-theme/master/images/screenshot.png)
 
 ## Features
 
