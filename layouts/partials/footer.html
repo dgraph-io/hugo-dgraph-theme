@@ -1,33 +1,65 @@
 <div class="page-footer__wrapper">
-	<footer id="page-footer" class="page-footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-tablet-3">
-					<figure class="page-logo-footer"><a href="/"><img src="/images/logo.svg" width="140" height="42" alt="Company Logo"></a></figure>
-				</div>
-				<div class="col-4 col-tablet-2">
-					<nav class="page-footer-nav">
-						<h6 class="page-footer-nav__title">Community</h6>
-						<ul class="page-footer-nav__list">
-							{{if .Site.Params.github }}
-							<li class="page-footer-nav__item"><a href="https://github.com/{{.Site.Params.github}}" title="Wa are on GitHub, check it out." target="_blank" class="page-footer-nav__link">GitHub</a></li>
-							{{end}}
-							{{if .Site.Params.discourse }}
-							<li class="page-footer-nav__item"><a href="{{.Site.Params.discourse}}" title="Join our community" target="_blank" class="page-footer-nav__link">Discuss</a></li>
-							{{end}}
-							{{if .Site.Params.website}}
-							<li class="page-footer-nav__item"><a href="{{.Site.Params.website}}" title="Discuss about Dgraph with us." target="_blank" class="page-footer-nav__link">Website</a></li>
-							{{end}}
-						</ul>
-					</nav>
-				</div>
-			</div>
-			<div class="row">
-				<span class="imprint__copyrights">{{ with .Site.Copyright | safeHTML }}{{ . }}{{ else }}&copy; {{ $.Site.LastChange.Year }} {{ if isset $.Site.Params "Author" }}{{ $.Site.Params.Author }}{{ else }}{{ .Site.Title }}{{ end }}{{ end }}</span>
-			</div>
-		</div>
-	</footer>
-	<!-- / page-footer-->
+  <footer id="page-footer" class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-tablet-3">
+          <figure class="page-logo-footer"><a href="/"><img src="/images/logo.svg" width="140" height="42" alt="Company Logo"></a></figure>
+        </div>
+        {{if .Site.Params.website}}
+        <div class="col-4 col-tablet-2">
+          <nav class="page-footer-nav">
+            <h6 class="page-footer-nav__title">Company</h6>
+            <ul class="page-footer-nav__list">
+              <li class="page-footer-nav__item"><a href="{{.Site.Params.website}}about.html" title="Learn More about us" target="_blank" class="page-footer-nav__link">About</a></li>
+              <li class="page-footer-nav__item"><a href="{{.Site.Params.website}}careers.html" title="See open positions" target="_blank" class="page-footer-nav__link">Careers</a></li>
+              <li class="page-footer-nav__item"><a href="{{.Site.Params.website}}contact.html" title="How can you reach us" target="_blank" class="page-footer-nav__link">Contact</a></li>
+              {{if .Site.Params.wiki}}
+              <li class="page-footer-nav__item"><a href="{{.Site.Params.wiki}}Beginners_Guide#Installation" title="Download" target="_blank" class="page-footer-nav__link page-footer-nav__link--download">Download</a></li>
+              {{end}}
+            </ul>
+          </nav>
+        </div>
+        {{end}}
+        <div class="col-4 col-tablet-2">
+          <nav class="page-footer-nav">
+            <h6 class="page-footer-nav__title">Community</h6>
+            <ul class="page-footer-nav__list">
+              <li class="page-footer-nav__item"><a href="{{.Permalink}}" title="Our thoughts" target="_blank" class="page-footer-nav__link">Blog</a></li>
+              {{if .Site.Params.wiki}}
+              <li class="page-footer-nav__item"><a href="{{.Site.Params.wiki}}" title="Documentation" target="_blank" class="page-footer-nav__link">Documentation</a></li>
+              {{end}}
+              {{if .Site.Params.github }}
+              <li class="page-footer-nav__item"><a href="https://github.com/{{.Site.Params.github}}" title="We are on GitHub, check it out." target="_blank" class="page-footer-nav__link">GitHub</a></li>
+              {{end}}
+              {{if .Site.Params.discourse }}
+              <li class="page-footer-nav__item"><a href="{{.Site.Params.discourse}}" title="Join our community" target="_blank" class="page-footer-nav__link">Discuss</a></li>
+              {{end}}
+              {{if .Site.Params.slack }}
+              <li class="page-footer-nav__item"><a href="{{.Site.Params.slack}}" title="Join our community" target="_blank" class="page-footer-nav__link">Slack</a></li>
+              {{end}}
+            </ul>
+          </nav>
+        </div>
+        <div class="col-4 col-tablet-2">
+          <nav class="page-footer-nav">
+            <h6 class="page-footer-nav__title">Connect</h6>
+            <ul class="page-footer-nav__list">
+              {{if .Site.Params.twitter }}
+              <li class="page-footer-nav__item"><a href="https://twitter.com/{{.Site.Params.twitter}}" title="Follow us on twitter" target="_blank" class="page-footer-nav__link">Twitter</a></li>
+              {{end}}
+              {{if .Site.Params.angellist }}
+              <li class="page-footer-nav__item"><a href="https://angel.co/{{.Site.Params.angellist}}" title="Follow us on twitter" target="_blank" class="page-footer-nav__link">Angel List</a></li>
+              {{end}}
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <span class="imprint__copyrights">{{ with .Site.Copyright | safeHTML }}{{ . }}{{ else }}&copy; {{ $.Site.LastChange.Year }} {{ if isset $.Site.Params "Author" }}{{ $.Site.Params.Author }}{{ else }}{{ .Site.Title }}{{ end }}{{ end }}</span>
+      </div>
+    </div>
+  </footer>
+  <!-- / page-footer-->
 </div>
 
 <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
@@ -38,7 +70,7 @@
 {{ with .Site.Params.googleAnalytics }}
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 ga('create', '{{ . }}', 'auto');
@@ -48,7 +80,7 @@ ga('send', 'pageview');
 
 <script>
 $(document.links).filter(function() {
-	return this.hostname != window.location.hostname;
+  return this.hostname != window.location.hostname;
 }).attr('target', '_blank');
 </script>
 </body>

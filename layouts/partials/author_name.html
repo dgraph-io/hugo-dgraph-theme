@@ -1,0 +1,10 @@
+<!--
+To add author name, create a file author_name.html in layouts/partials/ and add name in format:
+
+{{if eq .user "<author_name>" }} <display_name>
+{{end}}
+ -->
+
+{{if eq .user "bturner" }} Brandon Turner
+{{else if eq .user "molly"}} Molly Graham
+{{end}}

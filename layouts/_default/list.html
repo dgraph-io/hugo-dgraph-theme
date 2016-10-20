@@ -7,7 +7,7 @@
         <div class="col-12 col-desktop-10 push-desktop-1 col-hd-8 push-hd-2">
           <ul class="article__list">
           <!-- /.article__list-->
-          {{ range (.Paginate .Data.Pages).Pages }}
+          {{ range .Paginator.Pages }}
           <!-- <div class="col-sm-4"> -->
             {{ .Render "li" }}
           <!-- </div> -->
@@ -18,6 +18,37 @@
       </div>
     </div>
   </div>
+
+  <div class="paginator container">
+    {{ if .Paginator.HasPrev }}
+      <a class="paginator__active paginator__left" href="{{ .Paginator.Prev.URL }}">
+          < Previous Page
+      </a>
+    {{ else }}
+      <a class="paginator__gray paginator__left">
+          < Previous Page
+      </a>
+    {{ end }}
+
+    {{ range $i, $sequence :=  (seq .Paginator.TotalPages) }}
+      {{if eq $.Paginator.PageNumber $sequence }}
+        <a class="paginator__pages paginator__selected" href="/page/{{ $sequence }}/">{{ $sequence }}</a>
+      {{else}}
+        <a class="paginator__pages paginator__gray" href="/page/{{ $sequence }}/">{{ $sequence }}</a>
+      {{end}}
+    {{ end }}
+
+    {{ if .Paginator.HasNext }}
+      <a class="paginator__active paginator__right" href="{{ .Paginator.Next.URL }}">
+          Next Page >
+      </a>
+    {{ else }}
+      <a class="paginator__right paginator__gray">
+          Next Page >
+      </a>
+    {{ end }}
+  </div>
+
   {{ partial "footer.html" . }}
   <!-- / page-footer__wrapper-->
 

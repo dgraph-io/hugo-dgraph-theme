@@ -1,0 +1,13 @@
+{{if .Params.editor }}
+	<div class="article-author">
+	<figure class="article-author__figure">
+		{{partial "author_image.html" (dict "user" .Params.editor)}}
+	</figure>
+	<div class="article-author__bio">
+		<h4 class="article-author__name">{{partial "author_name.html" (dict "user" .Params.editor)}}
+			<span class="article-author__title">Editor</span>
+		</h4>
+		{{partial "author_detail.html" (dict "user" .Params.editor)}}
+	</div>
+</div>
+{{end}}
