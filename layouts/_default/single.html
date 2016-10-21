@@ -267,16 +267,19 @@
       <div class="row">
         <div class="col-12 col-desktop-10 push-desktop-1 col-hd-8 push-hd-2">
           <header class="page-intro__header">
-          <div class="article__meta"><span class="article__meta-item article__date">{{ with .Site.Params.DateForm }}{{ $.Date.Format . }}{{ else }}{{ $.Date.Format "Mon, Jan 2, 2006" }}{{ end }} by {{partial "author_name.html" .}}</span></div>
+          <div class="article__meta"><span class="article__meta-item article__date">{{ with .Site.Params.DateForm }}
+{{ $.Date.Format . }}{{ else }}{{ $.Date.Format "Mon, Jan 2, 2006" }}{{ end }} by {{partial "author_name.html" .}}</span></div>
             <h1 class="page-intro__title page-intro__title--blog">{{ .Title }}</h1>
           </header>
           <div class="page-intro__footer">
               <div class="share">
                 <ul class="share__list">
-                  <li class="share__item"><a href="https://twitter.com/share?text={{ .Title | safeHTML}}&amp;url={{ .Permalink }}&amp;via=dgraphlabs" class="share__link">
+                  {{if .Site.Params.twitter}}
+                  <li class="share__item"><a href="https://twitter.com/share?text={{ .Title | safeHTML}}&amp;url={{ .Permalink }}&amp;via={{.Site.Params.twitter}}" class="share__link">
                       <svg class="icon share__icon share__icon--twitter">
                         <use xlink:href="#icon-twitter" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
                       </svg></a></li>
+                  {{end}}
                 </ul>
               </div>
               <!-- /.share-->
@@ -296,6 +299,7 @@
         </div>
       </div>
     </div>
+
     <footer class="article-footer">
           <div class="container">
             <div class="row">
@@ -330,16 +334,17 @@
   <script type="text/javascript" src="/js/highlight.pack.js"></script>
   <script type="text/javascript">hljs.initHighlightingOnLoad();</script>-
 
+  {{if .Site.Params.discourse}}
   <script type="text/javascript">
-    DiscourseEmbed = { discourseUrl: 'https://discuss.dgraph.io/',discourseEmbedUrl: '{{ .Permalink }}' };
+DiscourseEmbed = { discourseUrl: '{{.Site.Params.discourse}}',discourseEmbedUrl: '{{ .Permalink }}' };
     (function() {
       var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
       d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
     })();
   </script>
-  <noscript>Please enable JavaScript to view the comments on <a href="https://discuss.dgraph.io">discuss</a>.</noscript>
-
+  <noscript>Please enable JavaScript to view the comments on <a href="{{.Site.Params.discourse}}">discuss</a>.</noscript>
+  {{end}}
   <!-- Google Analytics-->
   <script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date; e=o.createElement(i);r=o.getElementsByTagName(i)[0]; e.src='//www.google-analytics.com/analytics.js'; r.parentNode.insertBefore(e,r)}(window,document,'script','ga')); ga('create','UA-XXXXX-X');ga('send','pageview');</script>
 </html>
