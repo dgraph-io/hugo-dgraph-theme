@@ -3,13 +3,13 @@
 {{$user := .Params.editor }}
 <div class="article-author">
 	<figure class="article-author__figure">
-		{{partial "author_image.html" (dict "content" . "user" $user)}}
+		{{partial "author_image.html" (dict "user" $user)}}
 	</figure>
 	<div class="article-author__bio">
-		<h4 class="article-author__name">{{partial "author_name.html" (dict "content" . "user" $user)}}
+		<h4 class="article-author__name">{{partial "author_name.html" (dict "user" $user)}}
 			<span class="article-author__title">Editor</span>
 		</h4>
-		{{partial "author_detail.html" (dict "content" . "user" $user)}}
+		{{partial "author_detail.html" (dict "user" $user)}}
 	</div>
 </div>
 {{end}}

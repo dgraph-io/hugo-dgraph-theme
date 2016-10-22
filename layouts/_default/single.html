@@ -275,7 +275,7 @@
                   {{ $.Date.Format "Mon, Jan 2, 2006" }}
                 {{ end }} by
                 {{$user := .Params.author }}
-                {{partial "author_name.html" (dict "content" . "user" $user)}}
+                {{partial "author_name.html" (dict "user" $user)}}
               </span>
             </div>
             <h1 class="page-intro__title page-intro__title--blog">{{ .Title }}</h1>
