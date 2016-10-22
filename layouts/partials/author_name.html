@@ -1,4 +1,10 @@
-{{if eq .Params.author "mrjn" }}Manish Rai Jain
-{{else if eq .Params.author "pawan"}}Pawan Rawal
-{{end}}
+<!--
+To add author name, create a file author_name.html in layouts/partials/ and add name in format:
 
+{{if eq .user "<author_name>" }} <display_name>
+{{end}}
+ -->
+
+{{if eq .user "mrjn" }} Manish Rai Jain
+{{else if eq .user "pawan"}} Pawan Rawal
+{{end}}

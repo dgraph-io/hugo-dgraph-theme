@@ -1,0 +1,69 @@
+<!--  
+To add author profile to blog, create a file author_detail.html in layouts/partials/ and add name in format:
+
+{{if eq .user "<author_name>" }}
+<nav class="social__nav article-author__social">
+    <ul class="social__list social__list--inline">
+        <li class="social__item social__item--inline">
+            <a href="<author_linkedin_link>" class="social__link">
+                <svg class="icon social__icon social__icon--linkedin">
+                    <use xlink:href="#icon-linkedin" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
+                </svg>
+            </a>
+        </li>
+        <li class="social__item social__item--inline">
+            <a href="<author_twitter_link>" class="social__link">
+                <svg class="icon social__icon social__icon--twitter">
+                    <use xlink:href="#icon-twitter" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
+                </svg>
+            </a>
+        </li>
+    </ul>
+</nav>
+<p>Author Bio<p>
+{{end}}
+-->
+
+{{if eq .user "mrjn" }}
+<nav class="social__nav article-author__social">
+    <ul class="social__list social__list--inline">
+        <li class="social__item social__item--inline">
+            <a href="https://au.linkedin.com/in/manishrjain" class="social__link">
+                <svg class="icon social__icon social__icon--linkedin">
+                    <use xlink:href="#icon-linkedin" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
+                </svg>
+            </a>
+        </li>
+        <li class="social__item social__item--inline">
+            <a href="https://twitter.com/manishrjain" class="social__link">
+                <svg class="icon social__icon social__icon--twitter">
+                    <use xlink:href="#icon-twitter" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
+                </svg>
+            </a>
+        </li>
+    </ul>
+</nav>
+<p>Manish is the Chief decision maker at Dgraph. He got thrust into distributed systems right out of college, working on real time web indexing system at Google. He then lead various projects to consolidate and serve knowledge graph right behind web search.</p>
+<p>Implementing GTD and Zero Waste practices, Manish is into efficient and minimalist living. He loves cycling, swimming and ultra light travelling.</p>
+
+{{ else if eq .user "pawan" }}
+<nav class="social__nav article-author__social">
+    <ul class="social__list social__list--inline">
+        <li class="social__item social__item--inline">
+            <a href="https://www.linkedin.com/in/pawanrawal1" class="social__link">
+                <svg class="icon social__icon social__icon--linkedin">
+                    <use xlink:href="#icon-linkedin" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
+                </svg>
+            </a>
+        </li>
+        <li class="social__item social__item--inline">
+            <a href="https://twitter.com/pawan_rawal" class="social__link">
+                <svg class="icon social__icon social__icon--twitter">
+                    <use xlink:href="#icon-twitter" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
+                </svg>
+            </a>
+        </li>
+    </ul>
+</nav>
+<p>After graduating from IIT Delhi in 2014, Pawan worked in various startups understanding how the web works. His interest in distributed systems and application of concepts in Computer Science to solve real world problems led him to Dgraph. In his free time, he likes to travel, do yoga, read and cook.</p>
+{{end}}

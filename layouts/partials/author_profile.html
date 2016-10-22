@@ -1,46 +1,13 @@
-{{if eq .Params.author "mrjn" }}
+{{$user := .Params.author }}
+
 <div class="article-author">
-	<figure class="article-author__figure"><img src="/images/team-manish.jpg" alt="Manish Rai Jain" class="article-author__image"></figure>
+	<figure class="article-author__figure">
+		{{partial "author_image.html" (dict "content" . "user" $user)}}
+	</figure>
 	<div class="article-author__bio">
-		<h4 class="article-author__name">Manish Rai Jain
+		<h4 class="article-author__name">{{partial "author_name.html" (dict "content" . "user" $user)}}
 			<span class="article-author__title">Author</span>
 		</h4>
-		<nav class="social__nav article-author__social">
-			<ul class="social__list social__list--inline">
-				<li class="social__item social__item--inline"><a href="https://au.linkedin.com/in/manishrjain" class="social__link">
-						<svg class="icon social__icon social__icon--linkedin">
-							<use xlink:href="#icon-linkedin" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
-						</svg></a></li>
-						<li class="social__item social__item--inline"><a href="https://twitter.com/manishrjain" class="social__link">
-								<svg class="icon social__icon social__icon--twitter">
-									<use xlink:href="#icon-twitter" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
-								</svg></a></li>
-			</ul>
-		</nav>
-		<p>Manish is the Chief decision maker at Dgraph. He got thrust into distributed systems right out of college, working on real time web indexing system at Google. He then lead various projects to consolidate and serve knowledge graph right behind web search.</p>
-		<p>Implementing GTD and Zero Waste practices, Manish is into efficient and minimalist living. He loves cycling, swimming and ultra light travelling.</p>
+		{{partial "author_detail.html" (dict "content" . "user" $user)}}
 	</div>
 </div>
-{{ else if eq .Params.author "pawan"}}
-<div class="article-author">
-	<figure class="article-author__figure"><img src="/images/pawan.png" alt="Pawan Rawal" class="article-author__image"></figure>
-	<div class="article-author__bio">
-		<h4 class="article-author__name">Pawan Rawal
-			<span class="article-author__title">Author</span>
-		</h4>
-		<nav class="social__nav article-author__social">
-			<ul class="social__list social__list--inline">
-				<li class="social__item social__item--inline"><a href="https://www.linkedin.com/in/pawanrawal1" class="social__link">
-						<svg class="icon social__icon social__icon--linkedin">
-							<use xlink:href="#icon-linkedin" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
-						</svg></a></li>
-						<li class="social__item social__item--inline"><a href="https://twitter.com/pawan_rawal" class="social__link">
-								<svg class="icon social__icon social__icon--twitter">
-									<use xlink:href="#icon-twitter" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
-								</svg></a></li>
-			</ul>
-		</nav>
-		<p>After graduating from IIT Delhi in 2014, Pawan worked in various startups understanding how the web works. His interest in distributed systems and application of concepts in Computer Science to solve real world problems led him to Dgraph. In his free time, he likes to travel, do yoga, read and cook.</p>
-	</div>
-</div>
-{{ end }}
