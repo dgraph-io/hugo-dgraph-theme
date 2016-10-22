@@ -4119,3 +4119,15 @@ img[data-src] {
 .hljs-strong {
   font-weight: bold;
 }
+.pagination-div {
+    text-align: center;
+    position: relative;
+}
+.pagination-div .right {
+    position: absolute;
+    right: 0px;
+}
+.pagination-div .left {
+    position: absolute;
+    left: 0px;
+}
