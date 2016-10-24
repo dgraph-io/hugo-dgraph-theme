@@ -1,0 +1,13 @@
+<!--
+To add author image, create a file author_image.html in layouts/partials/ and add name in format:
+
+{{if eq .user "<author_name>" }}
+	<img src="/images/<author_imgg_src>" class="article-author__image">
+{{end}}
+ -->
+
+{{if eq .user "bturner" }}
+	<img src="/images/brandon.jpg" class="article-author__image">
+{{else if eq .user "molly"}}
+	<img src="/images/molly.png" class="article-author__image">
+{{end}}

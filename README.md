@@ -26,6 +26,10 @@ For more information read the official [setup guide](//gohugo.io/overview/instal
 
 Please see the sample [`config.toml`](https://github.com/dgraph-io/hugo-dgraph-theme/blob/master/exampleSite/config.toml) under the `exampleSite` directory.
 
+## Show Author And Editor Details in Blogs
+
+Sample files `author_image.html`,`author_name.html` and ``author_detail.html`` for author's and editor's name, image and details are added in `layout/partials/`.
+
 ## Contributing
 
 Pull requests, bug fixes and new features are welcome!

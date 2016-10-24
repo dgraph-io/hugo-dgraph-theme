@@ -1,0 +1,68 @@
+<!--  
+To add author profile to blog, create a file author_detail.html in layouts/partials/ and add name in format:
+
+{{if eq .user "<author_name>" }}
+<nav class="social__nav article-author__social">
+    <ul class="social__list social__list--inline">
+        <li class="social__item social__item--inline">
+            <a href="<author_linkedin_link>" class="social__link">
+                <svg class="icon social__icon social__icon--linkedin">
+                    <use xlink:href="#icon-linkedin" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
+                </svg>
+            </a>
+        </li>
+        <li class="social__item social__item--inline">
+            <a href="<author_twitter_link>" class="social__link">
+                <svg class="icon social__icon social__icon--twitter">
+                    <use xlink:href="#icon-twitter" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
+                </svg>
+            </a>
+        </li>
+    </ul>
+</nav>
+<p>Author Bio<p>
+{{end}}
+-->
+
+{{if eq .user "bturner" }}
+<nav class="social__nav article-author__social">
+    <ul class="social__list social__list--inline">
+        <li class="social__item social__item--inline">
+            <a href="https://au.linkedin.com/in/bturner" class="social__link">
+                <svg class="icon social__icon social__icon--linkedin">
+                    <use xlink:href="#icon-linkedin" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
+                </svg>
+            </a>
+        </li>
+        <li class="social__item social__item--inline">
+            <a href="https://twitter.com/brandonT" class="social__link">
+                <svg class="icon social__icon social__icon--twitter">
+                    <use xlink:href="#icon-twitter" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
+                </svg>
+            </a>
+        </li>
+    </ul>
+</nav>
+<p>I’m coffee drinking Boston based Backend Developer with — one project at a time.</p>
+
+{{ else if eq .user "molly" }}
+<nav class="social__nav article-author__social">
+    <ul class="social__list social__list--inline">
+        <li class="social__item social__item--inline">
+            <a href="https://www.linkedin.com/molly" class="social__link">
+                <svg class="icon social__icon social__icon--linkedin">
+                    <use xlink:href="#icon-linkedin" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
+                </svg>
+            </a>
+        </li>
+        <li class="social__item social__item--inline">
+            <a href="https://twitter.com/GrahamMooly" class="social__link">
+                <svg class="icon social__icon social__icon--twitter">
+                    <use xlink:href="#icon-twitter" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
+                </svg>
+            </a>
+        </li>
+    </ul>
+</nav>
+<p> I'm Molly Graham, a web developer working in NYC. Plain and simple, I love programming. I'm passionate about writing clean, unique, elegant code. Codes that work.</p>
+{{end}}

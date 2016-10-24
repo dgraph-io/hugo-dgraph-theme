@@ -4119,3 +4119,25 @@ img[data-src] {
 .hljs-strong {
   font-weight: bold;
 }
+/* ===========================================
+   Pagination styling
+   =========================================== */
+.pagination-div {
+  text-align: center;
+  position: relative;
+}
+.pagination-div .right {
+  position: absolute;
+  right: 0px;
+}
+.pagination-div .left {
+  position: absolute;
+  left: 0px;
+}
+.pagination-div a {
+  color: #a4958c;
+  margin: 0 7px;
+}
+.pagination-div .active {
+  color: #f96315;
+}
