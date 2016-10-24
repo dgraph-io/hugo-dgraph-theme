@@ -19,27 +19,31 @@
     </div>
   </div>
 
-  <div class="pagination-div container">
+  <div class="paginator container">
     {{ if .Paginator.HasPrev }}
-      <a class="btn btn-default active left" href="{{ .Paginator.Prev.URL }}">
+      <a class="btn btn-default paginator__active paginator__left" href="{{ .Paginator.Prev.URL }}">
           < Previous Page
       </a>
     {{ else }}
-      <a class="btn btn-default left">
+      <a class="btn btn-default paginator__link paginator__left">
           < Previous Page
       </a>
     {{ end }}
 
     {{ range $i, $sequence :=  (seq .Paginator.TotalPages) }}
-      <a class="text-center" href="/page/{{ $sequence }}/">{{ $sequence }}</a>
+      {{if eq $.Paginator.PageNumber $sequence }}
+        <a class="paginator__link text-center paginator__selected" href="/page/{{ $sequence }}/">{{ $sequence }}</a>
+      {{else}}
+        <a class="paginator__link text-center" href="/page/{{ $sequence }}/">{{ $sequence }}</a>
+      {{end}}
     {{ end }}
 
     {{ if .Paginator.HasNext }}
-      <a class="btn btn-default active right" href="{{ .Paginator.Next.URL }}">
+      <a class="btn btn-default paginator__active paginator__right" href="{{ .Paginator.Next.URL }}">
           Next Page >
       </a>
     {{ else }}
-      <a class="btn btn-default right">
+      <a class="btn btn-default paginator__link paginator__right">
           Next Page >
       </a>
     {{ end }}

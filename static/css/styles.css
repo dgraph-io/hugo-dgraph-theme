@@ -4122,22 +4122,28 @@ img[data-src] {
 /* ===========================================
    Pagination styling
    =========================================== */
-.pagination-div {
+.paginator {
   text-align: center;
   position: relative;
 }
-.pagination-div .right {
+.paginator__right {
   position: absolute;
   right: 0px;
 }
-.pagination-div .left {
+.paginator__left {
   position: absolute;
   left: 0px;
 }
-.pagination-div a {
+.paginator__link {
   color: #a4958c;
   margin: 0 7px;
+  padding: 0 5px;
 }
-.pagination-div .active {
+.paginator__active {
   color: #f96315;
+}
+.paginator__selected {
+  color: #f96315;
+  background-color: #ffe8e1;
+  border-radius: 100%;
 }
