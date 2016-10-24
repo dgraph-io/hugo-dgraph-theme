@@ -4129,6 +4129,9 @@ img[data-src] {
 .paginator__gray {
   color: #a4958c;
 }
+.paginator__gray:hover {
+  color: #a4958c;
+}
 .paginator__left {
   position: absolute;
   left: 0px;
