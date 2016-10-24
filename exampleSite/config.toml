@@ -3,6 +3,10 @@ baseurl = "http://hugo.spf13.com/"
 title = "Hugo Themes"
 author = "Steve Francia"
 
+# Number of blogs you want to list on a single page.
+paginate = 5
+paginatePath  ="page"
+
 [params]
   googleAnalytics = ""
 
