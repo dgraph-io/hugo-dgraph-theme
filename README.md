@@ -30,6 +30,10 @@ Please see the sample [`config.toml`](https://github.com/dgraph-io/hugo-dgraph-t
 
 Sample files `author_image.html`,`author_name.html` and ``author_detail.html`` for author's and editor's name, image and details are added in `layout/partials/`.
 
+## Pagination
+
+Theme also provides pagination, for changing the number of blogs listed add `paginate = <number of blogs per page>` to `config.toml` (by default it displays 10 blogs).
+
 ## Contributing
 
 Pull requests, bug fixes and new features are welcome!

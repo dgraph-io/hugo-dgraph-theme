@@ -4122,28 +4122,27 @@ img[data-src] {
 /* ===========================================
    Pagination styling
    =========================================== */
-.paginator {
-  text-align: center;
+.paginator{
   position: relative;
+  text-align: center;
 }
-.paginator__right {
-  position: absolute;
-  right: 0px;
+.paginator__gray {
+  color: #a4958c;
 }
 .paginator__left {
   position: absolute;
   left: 0px;
 }
-.paginator__link {
-  color: #a4958c;
-  margin: 0 7px;
-  padding: 0 5px;
+.paginator__right {
+  position: absolute;
+  right: 0px;
 }
-.paginator__active {
-  color: #f96315;
+.paginator__pages {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
 }
 .paginator__selected {
-  color: #f96315;
   background-color: #ffe8e1;
   border-radius: 100%;
 }
