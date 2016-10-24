@@ -28,8 +28,6 @@ Please see the sample [`config.toml`](https://github.com/dgraph-io/hugo-dgraph-t
 
 ## Show Author And Editor Details in Blogs
 
-* To add `author` name, create a file `author_name.html` in `layouts/partials/` and add name in format:
-
 Sample files `author_image.html`,`author_name.html` and ``author_detail.html`` for author's and editor's name, image and details are added in `layout/partials/`.
 
 ## Contributing
