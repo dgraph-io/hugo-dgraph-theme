@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var height = $("#page-header").height()
-  $("a").click(function(e) {
+  $("a.internal").click(function(e) {
       e.preventDefault();
       var href = $(this).attr("href");
        $('html, body').animate({
