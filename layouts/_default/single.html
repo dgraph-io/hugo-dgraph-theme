@@ -276,10 +276,6 @@
                 {{ end }} by
                 {{partial "author_name.html" (dict "user" .Params.author)}}
               </span>
-            </div>
-            <h1 class="page-intro__title page-intro__title--blog">{{ .Title }}</h1>
-          </header>
-          <div class="page-intro__footer">
               <div class="share">
                 <ul class="share__list">
                   {{if .Site.Params.twitter}}
@@ -290,8 +286,9 @@
                   {{end}}
                 </ul>
               </div>
-              <!-- /.share-->
             </div>
+            <h1 class="page-intro__title page-intro__title--blog">{{ .Title }}</h1>
+          </header>
         </div>
       </div>
     </div>
