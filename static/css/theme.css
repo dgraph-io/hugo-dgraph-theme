@@ -1,0 +1,234 @@
+.content img {
+  max-width: 100%;
+}
+
+html pre {
+  position: relative;
+  padding: 1rem;
+  transition: all 300ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
+  margin: 2rem 0;
+  background: #f9f9f9;
+  border: 0;
+  border-radius: 2px;
+  line-height: 1.45;
+  border: 1px solid #ececec;
+}
+html pre code {
+  /*color: #237794;*/
+  background: inherit;
+  white-space: inherit;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  font-size: 90%;
+}
+pre.collapsed {
+  max-height: 330px;
+  overflow: hidden;
+}
+pre.collapsed .showmore {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-bottom: 5px;
+  padding-top: 26px;
+  cursor: pointer;
+  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.1), rgba(226, 226, 226, 0.72));
+  color: #5a5a5a;
+}
+pre.collapsed .showmore:hover {
+  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.1), rgba(226, 226, 226, 0.91));
+  font-weight: 600;
+}
+pre.collapsed .showmore span {
+  /*background: white;
+  border: 1px solid #ececec;
+  padding: 6px 11px 3px;
+  text-transform: uppercase;
+  font-size: 11px;*/
+}
+/* unset the default hljs default style*/
+.hljs {
+  display: block;
+  overflow-x: inherit;
+  padding: 0;
+  background: inherit;
+}
+.copy-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #5a5a5a;
+  background: white;
+  padding: 6px 11px 3px;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #ececec;
+  border-left: 1px solid #ececec;
+  border-bottom-left-radius: 3px;
+  cursor: pointer;
+}
+.copy-btn:not(.copied):hover {
+    background-color: #fdfdfd;
+}
+.copy-btn.copied {
+  cursor: default;
+}
+
+.code-btn {
+  color: #5a5a5a;
+  background: white;
+  padding: 6px 12px 6px;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  border: 1px solid #ececec;
+  cursor: pointer;
+  /*display: inline-block;*/
+}
+
+.runnable {
+  background: #ffffff;
+  padding: 29px 0px;
+  margin-bottom: 13px;
+}
+.runnable .runnable-pane {
+  margin: 0px 2px 4px 0;
+  padding: 3px;
+  border: 1px solid #ececec;
+  background: #f9f9f9;
+  height: 263px;
+  display: flex;
+  flex-direction: column;
+}
+.runnable .runnable-content {
+  flex: 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.runnable .topbar {
+  overflow: auto;
+  padding: 2px 17px 8px 18px;
+}
+.runnable .output {
+  overflow-y: scroll;
+  /*overflow-y: scroll;
+  max-height: 202px;*/
+}
+.runnable .query-editable {
+  /*background: #FFFFD8;*/
+}
+.runnable .code-btn:hover {
+  text-decoration: none;
+  color: inherit;
+}
+.runnable .code-btn[data-action='run'] {
+  background-color: #3e65b7;
+  color: white;
+}
+.runnable .output-container.empty {
+  visibility: hidden;
+}
+.runnable .output-container:not(.empty) {
+  visibility: visible;
+}
+.runnable .output-container.error code {
+  color: #bf0000;
+}
+
+.runnable .runnable-code {
+  background: #fffff3;
+}
+html .runnable pre {
+  padding: 17px 12px;
+  border: 0;
+  margin: 0;
+  background: #fffff3;
+}
+/*.runnable .languages {
+  float: left;
+}
+.runnable .actions {
+  float: right;
+}*/
+.runnable .runnable-tab-content:not(.active) {
+  display: none;
+}
+/*
+.CodeMirror-scroll {
+  background: #FFFFD8;
+}*/
+
+#runnable-modal {
+  background: rgba(0, 0, 0, 0.63);
+}
+#runnable-modal .modal-title {
+  margin: 0;
+}
+#runnable-modal .runnable {
+  padding: 0;
+  margin-bottom: 0;
+}
+#runnable-modal .runnable-pane {
+  height: 644px;
+}
+#runnable-modal .code-btn[data-action='expand'] {
+  display: none;
+}
+#runnable-modal .modal-close-btn {
+  top: 19px;
+  right: 33px;
+  position: absolute;
+  color: white;
+  padding-bottom: 1px;
+  border-bottom: 1px solid white;
+  line-height: 19px;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+#runnable-modal .modal-close-btn:hover {
+  color: #afafaf;
+  border-color: #afafaf;
+  text-decoration: none;
+}
+@media screen and (min-width: 1024px) {
+  #runnable-modal .modal-dialog {
+    max-width: 80%;
+    margin-top: 69px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #runnable-modal .runnable {
+    padding: 23px 0;
+  }
+  #runnable-modal .modal-dialog {
+    max-width: 90%;
+    margin-top: 69px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #runnable-modal .modal-dialog {
+    max-width: 100%;
+    margin-top: 69px;
+  }
+  #runnable-modal .runnable-pane {
+    height: 375px;
+  }
+}
+
+/* custom bootstrap */
+.row-no-padding [class^="col-"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

@@ -1,5 +1,7 @@
 {{ partial "header.html" . }}
+
 <body class="blog-article" data-gr-c-s-loaded="true">
+
   <div class="svg-holder">
     <svg xmlns="https://www.w3.org/2000/svg">
       <symbol viewBox="0 0 32 32" id="icon-chevron-down">
@@ -265,7 +267,7 @@
   <section class="page-intro page-intro--blog-article">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-desktop-10 push-desktop-1 col-hd-8 push-hd-2">
+        <div class="col-12">
           <header class="page-intro__header">
             <div class="article__meta">
               <span class="article__meta-item article__date">
@@ -297,10 +299,11 @@
   <div class="page-content page-content--blog-article">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-desktop-10 push-desktop-1 col-hd-8 push-hd-2">
+        <div class="col-12">
 
           <img class="opening__image" src="{{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}">
           <div class="article-content">{{ .Content }}</div>
+          {{ partial "runnable-modal.html" . }}
         </div>
       </div>
     </div>
@@ -308,7 +311,7 @@
     <footer class="article-footer">
           <div class="container">
             <div class="row">
-              <div class="col-12 col-desktop-10 push-desktop-1 col-hd-8 push-hd-2">
+              <div class="col-12">
               {{ partial "author_profile.html" .}}
               {{ partial "editor_profile.html" .}}
               </div>
@@ -318,7 +321,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-12 col-desktop-10 push-desktop-1 col-hd-8 push-hd-2">
+        <div class="col-12">
           <div id='discourse-comments'></div>
         </div>
       </div>
@@ -328,17 +331,12 @@
   <!-- / page-footer__wrapper-->
 
   <!-- js-->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="assets/js/jquery-1.11.2.min.js"><\/script>')</script>
 
   <!-- Minified script-->
   <script type="text/javascript" src="/js/custom.js"></script>
   <script type="text/javascript" src="/js/script.min.js"></script>
   <!-- GitHub star button-->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Highlight JS plugin for article page-->
-  <script type="text/javascript" src="/js/highlight.pack.js"></script>
-  <script type="text/javascript">hljs.initHighlightingOnLoad();</script>-
 
   {{if .Site.Params.discourse}}
   <script type="text/javascript">
