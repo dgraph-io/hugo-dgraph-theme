@@ -2360,9 +2360,6 @@ hr {
     margin-right: -10%;
   }
 }
-.article-content code.hljs {
-  background: #f9f5f2;
-}
 .article-content .figure,
 .article-content figure {
   margin: 25px 0 15px;
@@ -4054,70 +4051,6 @@ img[data-src] {
     font-size: 1.125rem;
     margin-bottom: 25px;
   }
-}
-/* Vendor
- * =========================================================== */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Tomorrow Comment */
-.hljs-comment,
-.hljs-quote {
-  color: #8e908c;
-}
-/* Tomorrow Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-  color: #c82829;
-}
-/* Tomorrow Orange */
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-  color: #f5871f;
-}
-/* Tomorrow Yellow */
-.hljs-attribute {
-  color: #eab700;
-}
-/* Tomorrow Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-  color: #718c00;
-}
-/* Tomorrow Blue */
-.hljs-title,
-.hljs-section {
-  color: #4271ae;
-}
-/* Tomorrow Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-  color: #8959a8;
-}
-.hljs {
-  display: block;
-  overflow-x: auto;
-  background: white;
-  color: #4d4d4c;
-  padding: 0.5em;
-}
-.hljs-emphasis {
-  font-style: italic;
-}
-.hljs-strong {
-  font-weight: bold;
 }
 /* ===========================================
    Pagination styling

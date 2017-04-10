@@ -202,6 +202,7 @@ html .runnable pre {
   border-color: #afafaf;
   text-decoration: none;
 }
+
 @media screen and (min-width: 1024px) {
   #runnable-modal .modal-dialog {
     max-width: 80%;
