@@ -1,0 +1,12 @@
+/**
+ * runnable-custom.css
+ *
+ * This file contains CSS rules that overrides the CSS rules specific to blog
+ * that interferes with runnable styles.
+ * All CSS rules in this file should be scoped to .runnable or #runnable-modal
+ * in order to avoid polluting the global CSS namespace for the blog
+ */
+
+.article-content .runnable a {
+  border-bottom: none;
+}
