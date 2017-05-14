@@ -1,12 +1,12 @@
 /* Author: Danijel GrabeÅ¾ */
 /* ======================================================================
-      ________________    
-     / ______________ \   
+      ________________
+     / ______________ \
     / /     __ _     \ \        Superawesome
     \ \    / __  \   / /        Making websites not suck since 2007
      \ \  | |  | |  / /         www.sprawsm.com
       \ \ | |__| |_/ /          -------------------------------------
-       \ \ \___,__ _/     
+       \ \ \___,__ _/
         \ \      __             Front-end & Design:
          \ \ __ / /             Superawesome team [dudes@sprawsm.com]
           \ ____ /              Danijel GrabeÅ¾ [danijel@sprawsm.com]
@@ -206,7 +206,7 @@ textarea {
   -webkit-appearance: none;
 }
 /*
-// End Normalize 
+// End Normalize
 // =========================================== */
 /* ===========================================
  * Global classes
@@ -1424,7 +1424,7 @@ hr {
   border-top: 1px solid #555;
 }
 /* ===========================================
-   Fallback for Internet Explorer 
+   Fallback for Internet Explorer
    (this stylings are triggered conditionally)
    =========================================== */
 .browsehappy {
@@ -2278,20 +2278,20 @@ hr {
   margin-top: 25px;
   margin-bottom: 25px;
 }
-.article-content h1,
+/*.article-content h1,
 .article-content h2,
 .article-content h3 {
   font-size: 28px;
   font-size: 1.75rem;
-}
-@media screen and (max-width: 400px) {
+}*/
+/*@media screen and (max-width: 400px) {
   .article-content h1,
   .article-content h2,
   .article-content h3 {
     font-size: 24px;
     font-size: 1.5rem;
   }
-}
+}*/
 .article-content p {
   line-height: 1.555555556;
   letter-spacing: -0.01em;
@@ -2305,7 +2305,7 @@ hr {
 .article-content a {
   text-decoration: underline;
 }
-.article-content blockquote p,
+/*.article-content blockquote p,
 .article-content .blockquote p {
   font-size: 20px;
   font-size: 1.25rem;
@@ -2328,7 +2328,7 @@ hr {
     margin-left: -10%;
     margin-right: -10%;
   }
-}
+}*/
 .article-content table {
   margin-top: 25px;
   margin-bottom: 25px;
