@@ -2305,6 +2305,11 @@ hr {
 .article-content a {
   text-decoration: underline;
 }
+.article-content a:hover {
+  background-color: #ffc3a3;
+  text-decoration: none;
+  color: inherit;
+}
 /*.article-content blockquote p,
 .article-content .blockquote p {
   font-size: 20px;
