@@ -52,6 +52,12 @@ function eraseCookie(name) {
     });
   } else {
     createCookie('lang', 'curl', 365);
+
+    $('.runnable').each(function () {
+      var $runnable = $(this);
+
+      navToRunnableTab($runnable, 'curl');
+    });
   }
 
   // setupRunnableClipboard configures clipboard buttons for runnable
