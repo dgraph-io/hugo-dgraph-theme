@@ -50,7 +50,7 @@
             c-3.261,0-5.918-2.699-5.918-6.027c0-3.327,2.657-6.027,5.918-6.027c1.854,0,3.095,0.791,3.804,1.473L16.94,8.95
             c-1.663-1.556-3.816-2.496-6.395-2.496C5.268,6.455,1,10.723,1,16s4.268,9.545,9.546,9.545c5.509,0,9.164-3.871,9.164-9.327
             c0-0.627-0.069-1.105-0.151-1.582H10.546z"></path>
-          <polygon fill-rule="evenodd" clip-rule="evenodd" points="28.272,14.636 28.272,11.909 25.546,11.909 25.546,14.636 22.818,14.636 
+          <polygon fill-rule="evenodd" clip-rule="evenodd" points="28.272,14.636 28.272,11.909 25.546,11.909 25.546,14.636 22.818,14.636
             22.818,17.363 25.546,17.363 25.546,20.092 28.272,20.092 28.272,17.363 31,17.363 31,14.636       "></polygon>
         </g>
       </symbol>
@@ -340,15 +340,20 @@
 
   {{if .Site.Params.discourse}}
   <script type="text/javascript">
-DiscourseEmbed = { discourseUrl: '{{.Site.Params.discourse}}',discourseEmbedUrl: '{{ .Permalink }}' };
-    (function() {
-      var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
-      d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
-    })();
-  </script>
+DiscourseEmbed = {
+  discourseUrl: "{{.Site.Params.discourse}}",
+  discourseEmbedUrl: "{{ .Permalink }}"
+};
+(function() {
+  var d = document.createElement("script");
+  d.type = "text/javascript";
+  d.async = true;
+  d.src = DiscourseEmbed.discourseUrl + "javascripts/embed.js";
+  (document.getElementsByTagName("head")[0] ||
+    document.getElementsByTagName("body")[0])
+    .appendChild(d);
+})();
+</script>
   <noscript>Please enable JavaScript to view the comments on <a href="{{.Site.Params.discourse}}">discuss</a>.</noscript>
   {{end}}
-  <!-- Google Analytics-->
-  <script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date; e=o.createElement(i);r=o.getElementsByTagName(i)[0]; e.src='//www.google-analytics.com/analytics.js'; r.parentNode.insertBefore(e,r)}(window,document,'script','ga')); ga('create','UA-XXXXX-X');ga('send','pageview');</script>
 </html>
