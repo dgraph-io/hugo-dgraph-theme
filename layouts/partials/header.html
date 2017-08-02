@@ -50,6 +50,23 @@
     {{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
     {{ with .Params.image }}<meta property="og:image" content="{{ $.Site.BaseURL }}images/{{ . }}">{{ end }}
 
+    <!-- twitter card -->
+    {{ if .IsPage }}
+      {{ with .Params.image }}
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:image" content="{{ $.Site.BaseURL }}images/{{ . }}"/>
+      {{ else }}
+        <meta name="twitter:card" content="summary"/>
+      {{ end }}
+    {{ else }}
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:image" content="{{ $.Site.BaseURL }}images/diggy-lg.png"/>
+    {{ end }}
+
+    <meta name="twitter:title" content="{{ .Title }}"/>
+    <meta name="twitter:description" content="{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}"/>
+    {{ with .Site.Params.twitter }}<meta name="twitter:site" content="@{{ . }}"/>{{ end }}
+
     <!-- fonts-->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,800,700,500" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="/js/modernizr.min.js"></script>
