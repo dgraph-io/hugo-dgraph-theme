@@ -2,12 +2,12 @@ name = "Dgraph"
 license = "MIT"
 licenselink = "https://github.com/dgraph-io/hugo-dgraph-theme/blob/master/LICENSE.md"
 description = "An elegant open source theme for your open source project blog."
-homepage = "https://open.dgraph.io/"
+homepage = "https://blog.dgraph.io/"
 tags = ["blog", "company"]
 features = ["blog", "github", "discourse","twitter"]
 min_version = 0.15
 
 [author]
   name = "Dgraph Labs"
-  homepage = "https://open.dgraph.io"
+  homepage = "https://blog.dgraph.io"
 
