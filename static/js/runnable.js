@@ -291,17 +291,17 @@ function eraseCookie(name) {
     .done(function (res) {
       var now = new Date().getTime();
       var networkLatency = now - startTime;
-      var serverLatencyInfo = res.server_latency;
-      delete res.server_latency;
+      var serverLatencyInfo = res.data && res.data.server_latency;
+      res.data && delete res.data.server_latency;
 
       // In some cases, the server does not return latency information
       // TODO: find better ways to check for errors or fix dgraph to make the
       // response consistent
-      if (!res.code || !/Error/i.test(res.code)) {
+      if (!res.errors) {
         updateLatencyInformation($runnables, serverLatencyInfo, networkLatency);
       }
 
-      var userOutput = JSON.stringify(res, null, 2);
+      var userOutput = JSON.stringify(res.data, null, 2);
       codeEl.text(userOutput);
       for (var i = 0; i < codeEl.length; i++) {
         hljs.highlightBlock(codeEl[i]);
