@@ -301,7 +301,7 @@
       <div class="row">
         <div class="col-12">
 
-          <img class="opening__image" src="{{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}">
+          <img class="main__image" src="{{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}">
           <div class="article-content">{{ .Content }}</div>
           {{ partial "runnable-modal.html" . }}
         </div>
