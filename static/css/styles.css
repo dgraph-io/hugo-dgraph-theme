@@ -1227,22 +1227,22 @@ h6 small,
 h1,
 .alpha {
   font-size: 60px;
-  font-size: 3.75rem;
+  font-size: 3rem;
 }
 h2,
 .beta {
   font-size: 48px;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 h3,
 .gamma {
   font-size: 38px;
-  font-size: 2.375rem;
+  font-size: 1.625rem;
 }
 h4,
 .delta {
   font-size: 28px;
-  font-size: 1.75rem;
+  font-size: 1.375rem;
 }
 h5,
 .epsilon {
@@ -1258,14 +1258,14 @@ h6,
   h2,
   .beta {
     font-size: 38px;
-    font-size: 2.375rem;
+    font-size: 1.75rem;
   }
 }
 @media screen and (max-width: 400px) {
   h2,
   .beta {
     font-size: 28px;
-    font-size: 1.75rem;
+    font-size: 1.625rem;
   }
   h3,
   .gamma {
@@ -1274,8 +1274,8 @@ h6,
   }
   h4,
   .delta {
-    font-size: 24px;
-    font-size: 1.5rem;
+    font-size: 22px;
+    font-size: 1.4rem;
   }
 }
 p {
