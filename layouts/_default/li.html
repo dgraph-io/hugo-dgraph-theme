@@ -8,8 +8,11 @@
 				<h3 class="article__title">{{ .Title }}</h3>
 			</a>
 			<div class="col-md-3 opening__image">
+				<a href="{{ .Permalink }}" class="clearfix">
 				<img src="{{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}">
+				</a>
 			</div>
 			<p class="article__summary">{{ .Summary }}</p>
+
 		</li>
 	</div>
