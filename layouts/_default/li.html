@@ -1,18 +1,18 @@
-<div class="row col-xs-10 col-xs-offset-1">
+<div class="row">
 	<li class="article__item">
-		<div class="article__meta"><span class="article__meta-item article__date">
-			{{ with .Site.Params.DateForm }}{{ $.Date.Format . }}{{ else }}{{ $.Date.Format "Mon, Jan 2, 2006" }}{{ end }} by {{partial "author_name.html" (dict "user" .Params.author)}}
-			<span>
-			</div>
+		<div class="article__meta">
+			<span class="article__meta-item article__date">
+				{{ with .Site.Params.DateForm }}{{ $.Date.Format . }}{{ else }}{{ $.Date.Format "Mon, Jan 2, 2006" }}{{ end }} by {{partial "author_name.html" (dict "user" .Params.author)}}
+			</span>
+		</div>
+		<a href="{{ .Permalink }}" class="clearfix">
+			<h3 class="article__title">{{ .Title }}</h3>
+		</a>
+		<div class="col-md-3 opening__image">
 			<a href="{{ .Permalink }}" class="clearfix">
-				<h3 class="article__title">{{ .Title }}</h3>
+			<img src="{{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}">
 			</a>
-			<div class="col-md-3 opening__image">
-				<a href="{{ .Permalink }}" class="clearfix">
-				<img src="{{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}">
-				</a>
-			</div>
-			<p class="article__summary">{{ .Summary }}</p>
-
-		</li>
-	</div>
+		</div>
+		<p class="article__summary">{{ .Summary }}</p>
+	</li>
+</div>

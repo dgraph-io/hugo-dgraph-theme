@@ -299,8 +299,7 @@
   <div class="page-content page-content--blog-article">
     <div class="container">
       <div class="row">
-        <div class="col-12">
-
+        <div class="col-md-10 offset-md-1">
           <img class="main__image" src="{{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}">
           <div class="article-content">{{ .Content }}</div>
           {{ partial "runnable-modal.html" . }}
@@ -332,7 +331,7 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
 
   {{ partial "community-footer.html" . }}
-  
+
   {{ partial "footer.html" . }}
   <!-- / page-footer__wrapper-->
 
