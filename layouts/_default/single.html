@@ -278,6 +278,11 @@
                 {{ end }} by
                 {{partial "author_name.html" (dict "user" .Params.author)}}
               </span>
+              <style>
+                div.share {
+                  opacity: 0;
+                }
+              </style>
               <div class="share">
                 <ul class="share__list">
                   {{if .Site.Params.twitter}}
