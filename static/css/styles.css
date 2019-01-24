@@ -2696,8 +2696,9 @@ img[data-src] {
 }
 .paginator__pages {
   display: inline-block;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
 }
 .paginator__selected {
   background-color: #ffe8e1;
