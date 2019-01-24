@@ -4,8 +4,10 @@
       <div class="col-12">
         <figure class="page-logo"><a href="/"><img src="/images/logo.svg" width="233" height="70" alt=""></a></figure>
 				{{if .Site.Params.github}}
-				<a href="https://github.com/{{.Site.Params.github}}" data-style="mega" data-count-href="/{{.Site.Params.github}}/stargazers" data-count-api="/repos/{{.Site.Params.github}}#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star us on GitHub" class="github-button">Star</a>
-      {{end}}
+          <span class="topnav-stargazers-wrapper">
+            <a href="https://github.com/{{.Site.Params.github}}" data-show-count="true" aria-label="Star Dgraph on GitHub" class="github-button">Star</a>
+          </span>
+        {{end}}
 
         <nav class="page-nav pull-right">
           <ul class="page-nav__list">

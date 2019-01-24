@@ -2279,6 +2279,12 @@ img[data-src] {
   position: relative;
   z-index: 22;
 }
+.page-header .topnav-stargazers-wrapper {
+  display: inline-block;
+  margin-top: 25px;
+  vertical-align: top;
+  margin-left: 20px;
+}
 @media screen and (max-width: 989px) {
   .page-logo {
     padding: 15px 0;
