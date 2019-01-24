@@ -8,14 +8,16 @@
 		<a href="{{ .Permalink }}" class="clearfix">
 			<h3 class="article__title">{{ .Title }}</h3>
 		</a>
-		<a href="{{ .Permalink }}" class="row no-hover">
+		<div class="row">
 			<div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0 opening__image">
-				<div class="img_square" style="background-image: url({{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }})">
-				</div>
+				<a href="{{ .Permalink }}" class="no-hover">
+					<div class="img_square" style="background-image: url({{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }})">
+					</div>
+				</a>
 			</div>
 			<div class="col-md-12 col-lg-9">
-				<p class="article__summary">{{ .Summary }}</p>
+				<div class="article__summary">{{ .Summary }}</div>
 			</div>
-		</a>
+		</div>
 	</li>
 </div>
