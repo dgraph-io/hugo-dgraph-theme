@@ -469,7 +469,7 @@ hr {
   transition: 0.2s fill ease-in-out;
 }
 .usage-carousel__controls .icon:hover {
-  fill: #cccccc;
+  fill: #ccc;
 }
 .usage-carousel__control-up .icon:active {
   -webkit-transform: translateY(-2px);
@@ -531,7 +531,7 @@ hr {
   font-size: 28px;
   font-size: 1.75rem;
   font-weight: 500;
-  color: #cccccc;
+  color: #ccc;
   margin: 0;
   list-style-type: none;
   display: block;
@@ -1105,6 +1105,16 @@ hr {
   fill: #f96315;
   top: 2px;
   margin-right: 5px;
+}
+.article-tag-list {
+  padding: 24px 0 36px;
+}
+.article-tag-list a {
+  background-color: #dedddc;
+  color: #333;
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin-right: 8px;
 }
 .article-footer {
   padding: 60px 0 230px;
@@ -2515,7 +2525,7 @@ img[data-src] {
 .imprint__copyrights {
   font-size: 15px;
   font-size: 0.9375rem;
-  color: #cccccc;
+  color: #ccc;
   display: block;
   margin-top: 80px;
   margin-bottom: 25px;

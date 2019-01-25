@@ -278,11 +278,6 @@
                 {{ end }} by
                 {{partial "author_name.html" (dict "user" .Params.author)}}
               </span>
-              <style>
-                div.share {
-                  opacity: 0;
-                }
-              </style>
               <div class="share">
                 <ul class="share__list">
                   {{if .Site.Params.twitter}}
@@ -305,8 +300,20 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 offset-md-1">
-          <img class="main__image" src="{{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}">
+          <img
+            class="main__image"
+            src="{{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}"
+          >
           <div class="article-content">{{ .Content }}</div>
+          <div class="article-tag-list">
+            {{ $taxo := "tags" }}
+            {{ range .Param $taxo }}
+                {{ $name := . }}
+                {{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name | urlize)) }}
+                    <a href="{{ .Permalink }}">{{ $name }}</a>
+                {{ end }}
+            {{ end }}
+          </div>
           {{ partial "runnable-modal.html" . }}
         </div>
       </div>
