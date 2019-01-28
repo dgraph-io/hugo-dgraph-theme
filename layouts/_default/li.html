@@ -11,7 +11,9 @@
 		<div class="row">
 			<div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0 opening__image">
 				<a href="{{ .Permalink }}" class="no-hover">
-					<div class="img_square" style="background-image: url({{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }})">
+					<div
+							class="img_square"
+							style="background-image: url({{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}); {{ with .Params.thumbVerticalPosition }}background-position: 50% {{ . }};{{ end }}">
 					</div>
 				</a>
 			</div>
