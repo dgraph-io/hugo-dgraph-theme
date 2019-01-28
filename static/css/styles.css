@@ -921,11 +921,11 @@ hr {
 .article__title a:hover {
   color: #f96315;
 }
-.article__summary {
-  margin-bottom: 25px;
+.article__item .summary {
+  margin-bottom: 18px;
 }
 @media screen and (max-width: 767px) {
-  .article__summary {
+  .article__item .summary {
     font-size: 16px;
     font-size: 1rem;
   }
@@ -1115,6 +1115,18 @@ hr {
   border-radius: 4px;
   padding: 6px 12px;
   margin-right: 8px;
+}
+.article__item .tags a {
+  border: 1px solid #444;
+  border-radius: 3px;
+  color: #444;
+  font-size: 14px;
+  padding: 4px 8px;
+  margin-right: 6px;
+}
+.article__item .tags a:hover {
+  border-color: #f96315;
+  text-decoration: none;
 }
 .article-footer {
   padding: 60px 0 230px;
