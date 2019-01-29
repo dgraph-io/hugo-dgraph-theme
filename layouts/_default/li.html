@@ -1,33 +1,31 @@
-<div class="row">
-	<li class="article__item col-md-12 col-lg-10 offset-lg-1">
-		<div class="article__meta">
-			<span class="article__meta-item article__date">
-				{{ with .Site.Params.DateForm }}{{ $.Date.Format . }}{{ else }}{{ $.Date.Format "Mon, Jan 2, 2006" }}{{ end }} by {{partial "author_name.html" (dict "user" .Params.author)}}
-			</span>
-		</div>
-		<a href="{{ .Permalink }}" class="clearfix">
-			<h3 class="article__title">{{ .Title }}</h3>
-		</a>
-		<div class="row">
-			<div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0 opening__image">
-				<a href="{{ .Permalink }}" class="no-hover">
-					<div
-							class="img_square"
-							style="background-image: url({{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}); {{ with .Params.thumbVerticalPosition }}background-position: 50% {{ . }};{{ end }}">
-					</div>
-				</a>
-			</div>
-			<div class="col-md-12 col-lg-9">
-				<div class="summary">{{ .Summary }}</div>
-				<div class="tags">
-					{{ range .Param "tags" }}
-							{{ $name := . }}
-							{{ with $.Site.GetPage (printf "/%s/%s" "tags" ($name | urlize)) }}
-									<a href="{{ .Permalink }}">{{ $name }}</a>
-							{{ end }}
-					{{ end }}
+<li class="article__item">
+	<div class="article__meta">
+		<span class="article__meta-item article__date">
+			{{ with .Site.Params.DateForm }}{{ $.Date.Format . }}{{ else }}{{ $.Date.Format "Mon, Jan 2, 2006" }}{{ end }} by {{partial "author_name.html" (dict "user" .Params.author)}}
+		</span>
+	</div>
+	<a href="{{ .Permalink }}" class="clearfix">
+		<h3 class="article__title">{{ .Title }}</h3>
+	</a>
+	<div class="row">
+		<div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0 opening__image">
+			<a href="{{ .Permalink }}" class="no-hover">
+				<div
+						class="img_square"
+						style="background-image: url({{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}); {{ with .Params.thumbVerticalPosition }}background-position: 50% {{ . }};{{ end }}">
 				</div>
+			</a>
+		</div>
+		<div class="col-md-12 col-lg-9">
+			<div class="summary">{{ .Summary }}</div>
+			<div class="tags">
+				{{ range .Param "tags" }}
+						{{ $name := . }}
+						{{ with $.Site.GetPage (printf "/%s/%s" "tags" ($name | urlize)) }}
+								<a href="{{ .Permalink }}">{{ $name }}</a>
+						{{ end }}
+				{{ end }}
 			</div>
 		</div>
-	</li>
-</div>
+	</div>
+</li>

@@ -1,21 +1,25 @@
 {{ partial "header.html" . }}
 <body class="blog" data-gr-c-s-loaded="true">
   {{ partial "page_header.html" .}}
-  <div class="page-content page-content--blog">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <ul class="article__list">
-          <!-- /.article__list-->
-          {{ range .Paginator.Pages }}
-          <!-- <div class="col-sm-4"> -->
-            {{ .Render "li" }}
-          <!-- </div> -->
-          {{ end }}
-          </ul>
-          <!-- /.pagination-->
-        </div>
-      </div>
+  <div class="content container">
+    <div class="row">
+      {{ if eq .Page.Kind "taxonomy" }}
+        <nav aria-label="breadcrumb" class="breadcrumbs col-xs-12 col-lg-10 offset-lg-1">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Dgraph Blog</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              <span class="tag-name">{{ .Page.Title }}</span>
+              <span class="article-count">&nbsp;({{ len .Page.Pages }})</span>
+            </li>
+          </ol>
+        </nav>
+      {{ end }}
+
+      <ul class="article__list col-xs-12 col-lg-10 offset-lg-1">
+        {{ range .Paginator.Pages }}
+          {{ .Render "li" }}
+        {{ end }}
+      </ul>
     </div>
   </div>
 
