@@ -957,6 +957,10 @@ ul.article__list {
 .article .blog-tag:first-child {
   margin-left: 0;
 }
+.article-content p {
+  text-align: justify;
+}
+
 @media screen and (max-width: 767px) {
   .article-content p {
     font-size: 16px;
