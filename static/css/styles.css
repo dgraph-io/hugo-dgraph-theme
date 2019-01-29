@@ -919,6 +919,11 @@ ul.article__list {
   color: #a4958c;
   margin-bottom: 5px;
 }
+.share__item a {
+  color: #a4958c;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+}
 .article__title {
   font-size: 22px;
   font-size: 1.375rem;
@@ -941,6 +946,7 @@ ul.article__list {
 }
 .article__item .summary {
   margin-bottom: 18px;
+  text-align: justify;
 }
 @media screen and (max-width: 767px) {
   .article__item .summary {
@@ -1515,6 +1521,7 @@ ul.article__list {
 }
 .share__icon--twitter {
   fill: #35ccff;
+  vertical-align: middle;
 }
 .share__icon--facebook {
   fill: #03539e;

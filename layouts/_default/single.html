@@ -281,10 +281,14 @@
               <div class="share">
                 <ul class="share__list">
                   {{if .Site.Params.twitter}}
-                  <li class="share__item"><a href="https://twitter.com/share?text={{ .Title | safeHTML}}&amp;url={{ .Permalink }}&amp;via={{.Site.Params.twitter}}" class="share__link">
+                  <li class="share__item">
+                    <a href="https://twitter.com/share?text={{ .Title | safeHTML}}&amp;url={{ .Permalink }}&amp;via={{.Site.Params.twitter}}" class="share__link">
                       <svg class="icon share__icon share__icon--twitter">
                         <use xlink:href="#icon-twitter" xmlns:xlink="https://www.w3.org/1999/xlink"></use>
-                      </svg></a></li>
+                      </svg>
+                      Tweet this
+                    </a>
+                  </li>
                   {{end}}
                 </ul>
               </div>
