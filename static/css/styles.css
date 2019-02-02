@@ -1820,6 +1820,11 @@ ul.article__list {
 .social__icon--linkedin {
   fill: #217bc1;
 }
+.social__icon--github {
+  fill: #181616;
+  width: 32px;
+  height: 32px;
+}
 /* Components
  * =========================================================== */
 /* ===========================================
