@@ -24,3 +24,22 @@ $(document).on("click", ".community-link", function(e) {
 $(document).click(function() {
   $(".community-cta-wrapper").removeClass("open");
 });
+
+// Fix scroll position after every click on an anchor element.
+// Doesn't work when currently targeted anchor is clicked, but good enough
+// since this implementation is less likely to break
+window.addEventListener("hashchange", function(e) {
+  var url = e.newURL || ""
+  var idx = url.lastIndexOf('#')
+  if (idx > 0) {
+    var el = document.getElementById(url.substring(idx + 1))
+    if (el) {
+      var offsetTop = 0
+      while (el) {
+        offsetTop += el.offsetTop
+        el = el.offsetParent
+      }
+      document.scrollingElement.scrollTop = offsetTop - 100
+    }
+  }
+}, false);
