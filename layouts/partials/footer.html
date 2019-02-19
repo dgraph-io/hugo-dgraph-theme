@@ -58,6 +58,68 @@
         <span class="imprint__copyrights">{{ with .Site.Copyright | safeHTML }}{{ . }}{{ else }}&copy; {{ $.Site.LastChange.Year }} {{ if isset $.Site.Params "Author" }}{{ $.Site.Params.Author }}{{ else }}{{ .Site.Title }}{{ end }}{{ end }}</span>
       </div>
     </div>
+
+    <style>
+      .github-engage {
+        position: fixed;
+        bottom: -200px;
+
+        height: 100px;
+        left: 50%;
+        width: 320px;
+        margin-left: -160px;
+
+        padding: 10px 22px;
+        font-size: 18px;
+        background: #fff;
+        color: #333;
+        box-shadow: 0px 1px 20px 2px #888888;
+        border-radius: 2px;
+
+        text-align: center;
+        transition: bottom 2s ease-in-out;
+      }
+      .github-engage.open {
+        bottom: 4px;
+      }
+      .github-engage .line1 {
+        margin-bottom: 16px;
+      }
+      .github-engage span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .github-engage .github-close {
+        display: block;
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        right: -11px;
+        top: -11px;
+        background: #ccc;
+        border-radius: 50%;
+        overflow:hidden;
+        color: #fff;
+        box-shadow: 0px 1px 6px 0 #888888;
+
+        line-height: 21px;
+        font-size: 14px;
+      }
+    </style>
+
+    <div class="github-engage">
+      <div class="line1">Enjoying this Article?</div>
+      <a class="github-close" href="javascript:void(0)">
+        <i class="fa fas fa-times"></i>
+      </a>
+
+      <a class="github-button"
+          href="https://github.com/dgraph-io/dgraph"
+          data-size="large" data-show-count="true"
+          aria-label="Star dgraph-io/dgraph on GitHub">
+        Please Star Us
+      </a>
+    </div>
   </footer>
   <!-- / page-footer-->
 </div>
@@ -172,6 +234,23 @@ $(document.links)
   }
 
   showPopup(true);
+</script>
+
+<script>
+(function () {
+  function showGithubEngage() {
+    if (!getCookie('disableGithubEngage')) {
+      $('.github-engage').addClass('open')
+    }
+  }
+  $('.github-engage .github-close').click(function() {
+    $('.github-engage').removeClass('open');
+    var oldAttempts = getCookie('disableGithubCounter') || 10;
+    setCookie('noGithubEngage', 'value', oldAttempts);
+    setCookie('disableGithubCounter', oldAttempts * 6, 600);
+  });
+  window.setTimeout(showGithubEngage, 90 * 1000);
+})();
 </script>
 
 </body>
