@@ -1,0 +1,376 @@
+/*
+WARNING: this is a compiled version of the heart.scss. But gulp will not
+re-compile it. Because we only needed to compule it once.
+*/
+
+@-webkit-keyframes heart {
+  0%,
+  18.51852% {
+    height: 0;
+    width: 0;
+    top: 50%;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  44.44444% {
+    height: 12.5em;
+    width: 12.5em;
+    top: 54%;
+    margin-top: -6.25em;
+    margin-left: -6.25em;
+  }
+  62.96296% {
+    height: 10em;
+    width: 10em;
+    top: 54%;
+    margin-top: -5em;
+    margin-left: -5em;
+  }
+  81.48148% {
+    height: 10.25em;
+    width: 10.25em;
+    top: 54%;
+    margin-top: -5.125em;
+    margin-left: -5.125em;
+  }
+  100% {
+    height: 10em;
+    width: 10em;
+    top: 54%;
+    margin-top: -5em;
+    margin-left: -5em;
+  }
+}
+@keyframes heart {
+  0%,
+  18.51852% {
+    height: 0;
+    width: 0;
+    top: 50%;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  44.44444% {
+    height: 12.5em;
+    width: 12.5em;
+    top: 54%;
+    margin-top: -6.25em;
+    margin-left: -6.25em;
+  }
+  62.96296% {
+    height: 10em;
+    width: 10em;
+    top: 54%;
+    margin-top: -5em;
+    margin-left: -5em;
+  }
+  81.48148% {
+    height: 10.25em;
+    width: 10.25em;
+    top: 54%;
+    margin-top: -5.125em;
+    margin-left: -5.125em;
+  }
+  100% {
+    height: 10em;
+    width: 10em;
+    top: 54%;
+    margin-top: -5em;
+    margin-left: -5em;
+  }
+}
+@-webkit-keyframes ring {
+  0% {
+    height: 0;
+    width: 0;
+    border-width: 0;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  3.7037% {
+    height: 0;
+    width: 0;
+    border-width: 1em;
+    margin-top: -1em;
+    margin-left: -1em;
+    border-color: #E2264D;
+  }
+  7.40741% {
+    height: 0;
+    width: 0;
+    border-width: 7em;
+    margin-top: -7em;
+    margin-left: -7em;
+  }
+  11.11111% {
+    height: 0;
+    width: 0;
+    border-width: 8em;
+    margin-top: -8em;
+    margin-left: -8em;
+  }
+  14.81481% {
+    height: 0;
+    width: 0;
+    border-width: 8.5em;
+    margin-top: -8.5em;
+    margin-left: -8.5em;
+  }
+  18.51852% {
+    width: 12em;
+    height: 12em;
+    border-width: 2.5em;
+    border-color: #CC8EF5;
+  }
+  22.22222% {
+    width: 16em;
+    height: 16em;
+    border-width: 0.5em;
+  }
+  25.92593%,
+  100% {
+    width: 17em;
+    height: 17em;
+    border-width: 0;
+    margin-top: -8.5em;
+    margin-left: -8.5em;
+  }
+}
+@keyframes ring {
+  0% {
+    height: 0;
+    width: 0;
+    border-width: 0;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  3.7037% {
+    height: 0;
+    width: 0;
+    border-width: 1em;
+    margin-top: -1em;
+    margin-left: -1em;
+    border-color: #E2264D;
+  }
+  7.40741% {
+    height: 0;
+    width: 0;
+    border-width: 7em;
+    margin-top: -7em;
+    margin-left: -7em;
+  }
+  11.11111% {
+    height: 0;
+    width: 0;
+    border-width: 8em;
+    margin-top: -8em;
+    margin-left: -8em;
+  }
+  14.81481% {
+    height: 0;
+    width: 0;
+    border-width: 8.5em;
+    margin-top: -8.5em;
+    margin-left: -8.5em;
+  }
+  18.51852% {
+    width: 12em;
+    height: 12em;
+    border-width: 2.5em;
+    border-color: #CC8EF5;
+  }
+  22.22222% {
+    width: 16em;
+    height: 16em;
+    border-width: 0.5em;
+  }
+  25.92593%,
+  100% {
+    width: 17em;
+    height: 17em;
+    border-width: 0;
+    margin-top: -8.5em;
+    margin-left: -8.5em;
+  }
+}
+@-webkit-keyframes circles {
+  0%,
+  18.51852% {
+    box-shadow: -5.3033em -5.3033em 0 -0.83333em #8ce8c3, -5.74533em -4.82091em 0 -0.83333em #8be7c2, 0.83973em -7.45284em 0 -0.83333em #90d2fa, 0.18698em -7.49767em 0 -0.83333em #91d1f9, 6.35043em -3.99024em 0 -0.83333em #cc8ef5, 5.97849em -4.52853em 0 -0.83333em #cb8df4, 7.07912em 2.47709em 0 -0.83333em #8ce8c3, 7.26808em 1.85068em 0 -0.83333em #8ce8c3, 2.47709em 7.07912em 0 -0.83333em #f58ea7, 3.08465em 6.83629em 0 -0.83333em #f48da6, -3.99024em 6.35043em 0 -0.83333em #91d2fa, -3.42158em 6.67404em 0 -0.83333em #91d2fa, -7.45284em 0.83973em 0 -0.83333em #92d3fc, -7.35129em 1.4861em 0 -0.83333em #cb8df4;
+  }
+  22.22222% {
+    box-shadow: -5.65685em -5.65685em 0 -0.33333em #8ce8c3, -6.51138em -5.46369em 0 -0.33333em #8be7c2, 0.89572em -7.9497em 0 -0.33333em #90d2fa, 0.21191em -8.49736em 0 -0.33333em #91d1f9, 6.77379em -4.25626em 0 -0.33333em #cc8ef5, 6.77563em -5.13234em 0 -0.33333em #cb8df4, 7.55107em 2.64223em 0 -0.33333em #8ce8c3, 8.23716em 2.09744em 0 -0.33333em #8ce8c3, 2.64223em 7.55107em 0 -0.33333em #f58ea7, 3.49594em 7.7478em 0 -0.33333em #f48da6, -4.25626em 6.77379em 0 -0.33333em #91d2fa, -3.87779em 7.56391em 0 -0.33333em #91d2fa, -7.9497em 0.89572em 0 -0.33333em #92d3fc, -8.33147em 1.68424em 0 -0.33333em #cb8df4;
+  }
+  51.85185% {
+    box-shadow: -8.48528em -8.48528em 0 -0.16667em #9b88cb, -8.38671em -5.44639em 0 -0.58333em #ac77d9, 1.34357em -11.92455em 0 -0.16667em #97e3d5, -0.97087em -9.95276em 0 -0.58333em #b0dfe0, 10.16069em -6.38438em 0 -0.16667em #d1dbaa, 7.17606em -6.9645em 0 -0.58333em #d8ce9f, 11.3266em 3.96335em 0 -0.16667em #66cc9e, 9.91926em 1.26817em 0 -0.58333em #70d4a8, 3.96335em 11.3266em 0 -0.16667em #d5a5bf, 5.19306em 8.54588em 0 -0.58333em #ad9be0, -6.38438em 10.16069em 0 -0.16667em #bc7be1, -3.44362em 9.38837em 0 -0.58333em #a38cdb, -11.92455em 1.34357em 0 -0.16667em #b77bdc, -9.48718em 3.16122em 0 -0.58333em #9fcbcc;
+  }
+  81.48148%,
+  100% {
+    box-shadow: -8.48528em -8.48528em 0 -0.83333em #a068ce, -8.38671em -5.44639em 0 -0.83333em #b752e1, 1.34357em -11.92455em 0 -0.83333em #99e9c8, -0.97087em -9.95276em 0 -0.83333em #bae3d7, 10.16069em -6.38438em 0 -0.83333em #d3f491, 7.17606em -6.9645em 0 -0.83333em #dce483, 11.3266em 3.96335em 0 -0.83333em #59c392, 9.91926em 1.26817em 0 -0.83333em #67cd9f, 3.96335em 11.3266em 0 -0.83333em #caadc7, 5.19306em 8.54588em 0 -0.83333em #959ff3, -6.38438em 10.16069em 0 -0.83333em #ca5ed8, -3.44362em 9.38837em 0 -0.83333em #a975d1, -11.92455em 1.34357em 0 -0.83333em #c35dd1, -9.48718em 3.16122em 0 -0.83333em #90e0be;
+  }
+}
+@keyframes circles {
+  0%,
+  18.51852% {
+    box-shadow: -5.3033em -5.3033em 0 -0.83333em #8ce8c3, -5.74533em -4.82091em 0 -0.83333em #8be7c2, 0.83973em -7.45284em 0 -0.83333em #90d2fa, 0.18698em -7.49767em 0 -0.83333em #91d1f9, 6.35043em -3.99024em 0 -0.83333em #cc8ef5, 5.97849em -4.52853em 0 -0.83333em #cb8df4, 7.07912em 2.47709em 0 -0.83333em #8ce8c3, 7.26808em 1.85068em 0 -0.83333em #8ce8c3, 2.47709em 7.07912em 0 -0.83333em #f58ea7, 3.08465em 6.83629em 0 -0.83333em #f48da6, -3.99024em 6.35043em 0 -0.83333em #91d2fa, -3.42158em 6.67404em 0 -0.83333em #91d2fa, -7.45284em 0.83973em 0 -0.83333em #92d3fc, -7.35129em 1.4861em 0 -0.83333em #cb8df4;
+  }
+  22.22222% {
+    box-shadow: -5.65685em -5.65685em 0 -0.33333em #8ce8c3, -6.51138em -5.46369em 0 -0.33333em #8be7c2, 0.89572em -7.9497em 0 -0.33333em #90d2fa, 0.21191em -8.49736em 0 -0.33333em #91d1f9, 6.77379em -4.25626em 0 -0.33333em #cc8ef5, 6.77563em -5.13234em 0 -0.33333em #cb8df4, 7.55107em 2.64223em 0 -0.33333em #8ce8c3, 8.23716em 2.09744em 0 -0.33333em #8ce8c3, 2.64223em 7.55107em 0 -0.33333em #f58ea7, 3.49594em 7.7478em 0 -0.33333em #f48da6, -4.25626em 6.77379em 0 -0.33333em #91d2fa, -3.87779em 7.56391em 0 -0.33333em #91d2fa, -7.9497em 0.89572em 0 -0.33333em #92d3fc, -8.33147em 1.68424em 0 -0.33333em #cb8df4;
+  }
+  51.85185% {
+    box-shadow: -8.48528em -8.48528em 0 -0.16667em #9b88cb, -8.38671em -5.44639em 0 -0.58333em #ac77d9, 1.34357em -11.92455em 0 -0.16667em #97e3d5, -0.97087em -9.95276em 0 -0.58333em #b0dfe0, 10.16069em -6.38438em 0 -0.16667em #d1dbaa, 7.17606em -6.9645em 0 -0.58333em #d8ce9f, 11.3266em 3.96335em 0 -0.16667em #66cc9e, 9.91926em 1.26817em 0 -0.58333em #70d4a8, 3.96335em 11.3266em 0 -0.16667em #d5a5bf, 5.19306em 8.54588em 0 -0.58333em #ad9be0, -6.38438em 10.16069em 0 -0.16667em #bc7be1, -3.44362em 9.38837em 0 -0.58333em #a38cdb, -11.92455em 1.34357em 0 -0.16667em #b77bdc, -9.48718em 3.16122em 0 -0.58333em #9fcbcc;
+  }
+  81.48148%,
+  100% {
+    box-shadow: -8.48528em -8.48528em 0 -0.83333em #a068ce, -8.38671em -5.44639em 0 -0.83333em #b752e1, 1.34357em -11.92455em 0 -0.83333em #99e9c8, -0.97087em -9.95276em 0 -0.83333em #bae3d7, 10.16069em -6.38438em 0 -0.83333em #d3f491, 7.17606em -6.9645em 0 -0.83333em #dce483, 11.3266em 3.96335em 0 -0.83333em #59c392, 9.91926em 1.26817em 0 -0.83333em #67cd9f, 3.96335em 11.3266em 0 -0.83333em #caadc7, 5.19306em 8.54588em 0 -0.83333em #959ff3, -6.38438em 10.16069em 0 -0.83333em #ca5ed8, -3.44362em 9.38837em 0 -0.83333em #a975d1, -11.92455em 1.34357em 0 -0.83333em #c35dd1, -9.48718em 3.16122em 0 -0.83333em #90e0be;
+  }
+}
+.heart-wrapper {
+  height: 30em;
+  width: 30em;
+  position: relative;
+  cursor: pointer;
+}
+.heart-wrapper .heart {
+  display: block;
+  height: 10em;
+  width: 10em;
+  top: 54%;
+  margin-top: -5em;
+  margin-left: -5em;
+  left: 50%;
+  position: absolute;
+  z-index: 0;
+}
+.heart-wrapper .heart > * {
+  overflow: hidden;
+  position: absolute;
+}
+.heart-wrapper .heart > *:after {
+  display: block;
+  content: '';
+  position: absolute;
+  background: #AAB8C2;
+}
+.heart-wrapper .heart .tl {
+  height: 25%;
+  width: 50.25%;
+  top: 0;
+  left: 0;
+}
+.heart-wrapper .heart .tl:after {
+  top: 0;
+  left: 0;
+  height: 200%;
+  width: 104%;
+  border-top-left-radius: 70% 80%;
+  border-top-right-radius: 80% 80%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+}
+.heart-wrapper .heart .tr {
+  height: 25%;
+  width: 50.25%;
+  top: 0;
+  right: 0;
+}
+.heart-wrapper .heart .tr:after {
+  top: 0;
+  right: 0;
+  height: 200%;
+  width: 104%;
+  border-top-left-radius: 80% 80%;
+  border-top-right-radius: 70% 80%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+}
+.heart-wrapper .heart .bl {
+  height: 75.5%;
+  width: 50.25%;
+  bottom: 0;
+  left: 0;
+}
+.heart-wrapper .heart .bl:after {
+  top: 0;
+  left: 0;
+  height: 95%;
+  width: 160%;
+  border-top-left-radius: 0 0;
+  border-top-right-radius: 0 0;
+  border-bottom-right-radius: 0 0;
+  border-bottom-left-radius: 100% 100%;
+}
+.heart-wrapper .heart .br {
+  height: 75.5%;
+  width: 50.25%;
+  bottom: 0;
+  right: 0;
+}
+.heart-wrapper .heart .br:after {
+  top: 0;
+  right: 0;
+  height: 95%;
+  width: 160%;
+  border-top-left-radius: 0 0;
+  border-top-right-radius: 0 0;
+  border-bottom-right-radius: 100% 100%;
+  border-bottom-left-radius: 0 0;
+}
+.heart-wrapper .ring {
+  display: block;
+  position: absolute;
+  border-width: 0;
+  border-style: solid;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  z-index: 1;
+}
+.heart-wrapper .circles {
+  display: block;
+  position: absolute;
+  height: 1.66667em;
+  width: 1.66667em;
+  top: 50%;
+  left: 50%;
+  margin-top: -0.83333em;
+  margin-left: -0.83333em;
+  z-index: 2;
+  border-radius: 50%;
+}
+.heart-wrapper:hover .heart .tl:after, .heart-wrapper:hover .heart .tr:after, .heart-wrapper:hover .heart .bl:after, .heart-wrapper:hover .heart .br:after {
+  background: #E2264D;
+}
+.heart-wrapper.active .heart {
+  -webkit-animation-name: heart;
+          animation-name: heart;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+.heart-wrapper.active .heart .tl:after, .heart-wrapper.active .heart .tr:after, .heart-wrapper.active .heart .bl:after, .heart-wrapper.active .heart .br:after {
+  background: #E2264D;
+}
+.heart-wrapper.active .ring {
+  -webkit-animation-name: ring;
+          animation-name: ring;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+.heart-wrapper.active .circles {
+  -webkit-animation-name: circles;
+          animation-name: circles;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}

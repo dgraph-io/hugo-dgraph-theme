@@ -43,3 +43,49 @@ window.addEventListener("hashchange", function(e) {
     }
   }
 }, false);
+
+(function () {
+  var FLAG_COOKIE = 'noGithubEngage';
+  var NUM_DAYS_COOKIE = 'disableGithubCounterDays';
+
+  var $githubPopup = $('.github-engage');
+  console.log('GH Engage', setCookie, getCookie, Visibility, $githubPopup);
+
+  function showGithubEngage() {
+    if (!getCookie(FLAG_COOKIE)) {
+      $githubPopup.addClass('open')
+    }
+  }
+  function closeGithubEngage(daysToShutUp) {
+    $githubPopup.removeClass('open');
+    setCookie(FLAG_COOKIE, 'value', daysToShutUp);
+  }
+  $('.github-engage .github-close').click(function() {
+    // Nag user again in 2, 14, 98,... days.
+    // Restart after two years.
+    var curDisableDays = getCookie(NUM_DAYS_COOKIE) || 2;
+    setCookie(NUM_DAYS_COOKIE, curDisableDays * 7, 365 * 2);
+
+    closeGithubEngage(curDisableDays);
+  });
+
+  document.getElementById('star-us-wrapper').addEventListener('click', function() {
+    setTimeout(function() {
+      Visibility.onVisible(function() {
+        closeGithubEngage(365 * 5);
+        $githubPopup.addClass('love');
+        $('.heart-wrapper').addClass('active');
+      });
+    }, 500);
+  }, /* capture = */ true);
+
+  // Wait 60 seconds as long as page is visible.
+  var visibilityCountdown = 60;
+  var visibilityId = Visibility.every(1000, function () {
+    visibilityCountdown--;
+    if (visibilityCountdown < 0) {
+      Visibility.stop(visibilityId);
+      showGithubEngage();
+    }
+  });
+})();

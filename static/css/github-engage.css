@@ -1,0 +1,107 @@
+.github-engage {
+  position: fixed;
+  bottom: -200px;
+
+  height: 100px;
+  left: 50%;
+  width: 320px;
+  margin-left: -160px;
+
+  padding: 10px 22px;
+  font-size: 18px;
+  background: #fff;
+  color: #333;
+  box-shadow: 0px 1px 20px 2px #888888;
+  border-radius: 2px;
+
+  text-align: center;
+  transition: bottom 1.5s ease-in-out;
+}
+.github-engage.open {
+  bottom: 4px;
+}
+.github-engage .line1 {
+  margin-bottom: 16px;
+}
+.github-engage .github-close {
+  display: block;
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  right: -11px;
+  top: -11px;
+  background: #ccc;
+  border-radius: 50%;
+  overflow:hidden;
+  color: #fff;
+  box-shadow: 0px 1px 6px 0 #888888;
+
+  line-height: 21px;
+  font-size: 14px;
+}
+.github-engage.love .github-close {
+  opacity: 0.75;
+}
+
+.github-engage.love .love {
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  transition: opacity 500ms ease-in;
+}
+.github-engage.love {
+  bottom: -200px;
+  opacity: 0.5;
+  z-index: 100;
+  transition: all 4s cubic-bezier(1,-0.1,1,.25);
+}
+
+.github-engage #star-us-wrapper {
+  z-index: 100;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.github-engage #star-us-wrapper > span {
+  margin-bottom: -4px;
+}
+.github-engage.love #star-us-wrapper {
+  transition: opacity 300ms;
+  opacity: 0;
+  z-index: 1;
+}
+
+.github-engage.love .love {
+  opacity: 1;
+}
+
+.github-engage.love .love .heart-wrapper {
+  position: absolute;
+  font-size: 2.5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.github-engage .love-text {
+  font-family: 'Indie Flower', cursive;
+  font-size: 32px;
+  text-shadow: 0 0 5px #fff;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  transition: opacity 1s ease-in;
+  opacity: 0;
+}
+
+.github-engage.love .love-text {
+  opacity: 1;
+}

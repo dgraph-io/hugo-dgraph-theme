@@ -1,0 +1,375 @@
+@import "compass";
+
+// Config
+$size: 10em;
+$animDuration: 1s;
+$animTiming: ease-in;
+$animIteration: 1;
+$animStep: 100% / 27;
+
+// Layers & Colors
+$heartColors: #AAB8C2, #E2264D;
+$ringColors: #E2264D, #CC8EF5;
+$circles: (
+  (
+    first:   ( start: #8CE8C3, end:#A068CE),
+    second:  ( start: #8BE7C2, end:#B752E1)
+  ),
+  (
+    first:   ( start: #90D2FA, end:#99E9C8),
+    second:  ( start: #91D1F9, end:#BAE3D7)
+  ),
+  (
+    first:   ( start: #CC8EF5, end:#D3F491),
+    second:  ( start: #CB8DF4, end:#DCE483)
+  ),
+  (
+    first:   ( start: #8CE8C3, end:#59C392),
+    second:  ( start: #8CE8C3, end:#67CD9F)
+  ),
+  (
+    first:   ( start: #F58EA7, end:#CAADC7),
+    second:  ( start: #F48DA6, end:#959FF3)
+  ),
+  (
+    first:   ( start: #91D2FA, end:#CA5ED8),
+    second:  ( start: #91D2FA, end:#A975D1)
+  ),
+  (
+    first:   ( start: #92D3FC, end:#C35DD1),
+    second:  ( start: #CB8DF4, end:#90E0BE)
+  )
+);
+
+// Computations
+$circlesLength: length($circles);
+$angleBetweenCircles: 360deg / $circlesLength;
+$circleSize: $size / 6;
+$shiftAngleBeginning: -135deg;
+
+// Functions
+@function setStep($n) { @return ($n - 1) * $animStep }
+
+@function setBoxShadow($distance1, $distance2, $size1, $size2, $shiftAngle, $colorRatio) {
+  $boxS: ();
+
+  @for $i from 1 through length($circles) {
+    $circle: nth($circles, $i);
+    $order: $i - 1;
+    $angle1: ($order * $angleBetweenCircles) + $shiftAngleBeginning;
+    $angle2: $angle1 + $shiftAngle;
+    $distanceRatio1: $size * $distance1;
+    $distanceRatio2: $size * $distance2;
+    $firstCircle: map-get($circle, first);
+    $firstCircleStart: map-get($firstCircle, start);
+    $firstCircleEnd: map-get($firstCircle, end);
+    $secondCircle: map-get($circle, second);
+    $secondCircleStart: map-get($secondCircle, start);
+    $secondCircleEnd: map-get($secondCircle, end);
+
+    $boxS: append($boxS,
+      cos($angle1) * $distanceRatio1
+      sin($angle1) * $distanceRatio1
+      0
+      $circleSize * $size1
+      mix($firstCircleStart, $firstCircleEnd, $colorRatio)
+    );
+
+    $boxS: append($boxS,
+      cos($angle2) * $distanceRatio2
+      sin($angle2) * $distanceRatio2
+      0
+      $circleSize * $size2
+      mix($secondCircleStart, $secondCircleEnd, $colorRatio)
+    );
+  }
+
+  @return join($boxS, (), "comma");
+}
+
+// Animations
+@keyframes heart {
+  #{setStep(1)},
+  #{setStep(6)} {
+    height: 0;
+    width: 0;
+    top: 50%;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  #{setStep(13)} {
+    height: $size * 1.25;
+    width: $size * 1.25;
+    top: 54%;
+    margin-top: -$size * 1.25 / 2;
+    margin-left: -$size * 1.25 / 2;
+  }
+  #{setStep(18)}{
+    height: $size;
+    width: $size;
+    top: 54%;
+    margin-top: -$size / 2;
+    margin-left: -$size / 2;
+  }
+  #{setStep(23)} {
+    height: $size * 1.025;
+    width: $size * 1.025;
+    top: 54%;
+    margin-top: -$size * 1.025 / 2;
+    margin-left: -$size * 1.025 / 2;
+  }
+  #{setStep(28)}{
+    height: $size;
+    width: $size;
+    top: 54%;
+    margin-top: -$size / 2;
+    margin-left: -$size / 2;
+  }
+}
+
+@keyframes ring {
+  #{setStep(1)} {
+    height: 0;
+    width: 0;
+    border-width: 0;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  #{setStep(2)} {
+    height: 0;
+    width: 0;
+    border-width: $size * 0.1;
+    margin-top: -$size * 0.1;
+    margin-left: -$size * 0.1;
+    border-color: nth($ringColors, 1);
+  }
+  #{setStep(3)} {
+    height: 0;
+    width: 0;
+    border-width: $size * 0.7;
+    margin-top: -$size * 0.7;
+    margin-left: -$size * 0.7;
+  }
+  #{setStep(4)} {
+    height: 0;
+    width: 0;
+    border-width: $size * 0.8;
+    margin-top: -$size * 0.8;
+    margin-left: -$size * 0.8;
+  }
+  #{setStep(5)} {
+    height: 0;
+    width: 0;
+    border-width: $size * 0.85;
+    margin-top: -$size * 0.85;
+    margin-left: -$size * 0.85;
+  }
+  #{setStep(6)} {
+    width: $size * 1.2;
+    height: $size * 1.2;
+    border-width: $size * 0.25;
+    border-color: nth($ringColors, 2);
+  }
+  #{setStep(7)} {
+    width: $size * 1.6;
+    height: $size * 1.6;
+    border-width: $size * 0.05;
+  }
+  #{setStep(8)},
+  #{setStep(28)} {
+    width: $size * 1.7;
+    height: $size * 1.7;
+    border-width: 0;
+    margin-top: -$size * 0.85;
+    margin-left: -$size * 0.85;
+  }
+}
+
+@keyframes circles {
+  #{setStep(1)},
+  #{setStep(6)} {
+    box-shadow: setBoxShadow($distance1: 0.75, $distance2: 0.75, $size1: -0.500, $size2: -0.500, $colorRatio: 100%, $shiftAngle:  -5deg);
+  }
+  #{setStep(7)} {
+    box-shadow: setBoxShadow($distance1: 0.80, $distance2: 0.85, $size1: -0.200, $size2: -0.200, $colorRatio: 100%, $shiftAngle:  -5deg);
+  }
+  #{setStep(15)} {
+    box-shadow: setBoxShadow($distance1: 1.20, $distance2: 1.00, $size1: -0.100, $size2: -0.350, $colorRatio:  25%, $shiftAngle: -12deg);
+  }
+  #{setStep(23)},
+  #{setStep(28)} {
+    box-shadow: setBoxShadow($distance1: 1.20, $distance2: 1.00, $size1: -0.500, $size2: -0.500, $colorRatio:   0%, $shiftAngle: -12deg);
+  }
+}
+
+// Styles
+.heart-wrapper{
+  height: $size * 3;
+  width: $size * 3;
+  position: relative;
+  cursor:pointer;
+
+  // Layer 1 : Heart
+  .heart{
+    display: block;
+    height: $size;
+    width: $size;
+    top: 54%;
+    margin-top: -$size / 2;
+    margin-left: -$size / 2;
+    left: 50%;
+    position: absolute;
+    z-index: 0;
+
+    > * {
+      overflow: hidden;
+      position: absolute;
+      &:after{
+        display: block;
+        content: '';
+        position: absolute;
+        background: nth($heartColors, 1);
+      }
+    }
+
+    // Top Left Part
+    .tl{
+      height: 25%;
+      width: 50.25%;
+      top: 0;
+      left: 0;
+      &:after{
+        top: 0;
+        left: 0;
+        height: 200%;
+        width: 104%;
+        border-top-left-radius: 70% 80%;
+        border-top-right-radius: 80% 80%;
+        border-bottom-right-radius: 50% 50%;
+        border-bottom-left-radius: 50% 50%;
+      }
+    }
+
+    // Top Right Part
+    .tr{
+      height: 25%;
+      width: 50.25%;
+      top: 0;
+      right: 0;
+      &:after{
+        top: 0;
+        right: 0;
+        height: 200%;
+        width: 104%;
+        border-top-left-radius: 80% 80%;
+        border-top-right-radius: 70% 80%;
+        border-bottom-right-radius: 50% 50%;
+        border-bottom-left-radius: 50% 50%;
+      }
+    }
+
+    // Bottom Left Part
+    .bl{
+      height: 75.5%;
+      width: 50.25%;
+      bottom: 0;
+      left: 0;
+      &:after{
+        top: 0;
+        left: 0;
+        height: 95%;
+        width: 160%;
+        border-top-left-radius: 0 0;
+        border-top-right-radius: 0 0;
+        border-bottom-right-radius: 0 0;
+        border-bottom-left-radius: 100% 100%;
+      }
+    }
+
+    // Bottom Right Part
+    .br{
+      height: 75.5%;
+      width: 50.25%;
+      bottom: 0;
+      right: 0;
+      &:after{
+        top: 0;
+        right: 0;
+        height: 95%;
+        width: 160%;
+        border-top-left-radius: 0 0;
+        border-top-right-radius: 0 0;
+        border-bottom-right-radius: 100% 100%;
+        border-bottom-left-radius: 0 0;
+      }
+    }
+  }
+
+  // Layer 2 : Ring
+  .ring{
+    display: block;
+    position: absolute;
+    border-width: 0;
+    border-style: solid;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  // Layer 3 : Circles
+  .circles{
+    display: block;
+    position: absolute;
+    height: $circleSize;
+    width: $circleSize;
+    top: 50%;
+    left: 50%;
+    margin-top: -$circleSize / 2;
+    margin-left: -$circleSize / 2;
+    z-index: 2;
+    border-radius: 50%;
+  }
+
+  // Hover Styles
+  &:hover .heart{
+    .tl,.tr,.bl,.br{
+      &:after{
+        background: nth($heartColors, 2);
+      }
+    }
+  }
+
+  // Active Styles
+  &.active{
+
+    // Layer 1 : Animation
+    .heart{
+      animation-name: heart;
+      animation-duration: $animDuration;
+      animation-timing-function: $animTiming;
+      animation-iteration-count: $animIteration;
+      .tl,.tr,.bl,.br{
+        &:after{
+          background: nth($heartColors, 2);
+        }
+      }
+    }
+
+    // Layer 2 : Animation
+    .ring{
+      animation-name: ring;
+      animation-duration: $animDuration;
+      animation-timing-function: $animTiming;
+      animation-iteration-count: $animIteration;
+    }
+
+    // Layer 3 : Animation
+    .circles{
+      animation-name: circles;
+      animation-duration: $animDuration;
+      animation-timing-function: $animTiming;
+      animation-iteration-count: $animIteration;
+    }
+  }
+}
