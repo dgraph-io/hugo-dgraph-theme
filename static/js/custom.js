@@ -56,8 +56,10 @@ window.addEventListener("hashchange", function(e) {
       $githubPopup.addClass('open')
     }
   }
-  function closeGithubEngage(daysToShutUp) {
+  function closeGithubEngage(daysToShutUp, addClass) {
     $githubPopup.removeClass('open');
+    addClass && $githubPopup.addClass(addClass);
+
     setCookie(FLAG_COOKIE, 'value', daysToShutUp);
   }
   $('.github-engage .github-close').click(function() {
@@ -66,14 +68,13 @@ window.addEventListener("hashchange", function(e) {
     var curDisableDays = getCookie(NUM_DAYS_COOKIE) || 2;
     setCookie(NUM_DAYS_COOKIE, curDisableDays * 7, 365 * 2);
 
-    closeGithubEngage(curDisableDays);
+    closeGithubEngage(curDisableDays, 'dismissAnimation');
   });
 
   document.getElementById('star-us-wrapper').addEventListener('click', function() {
     setTimeout(function() {
       Visibility.onVisible(function() {
-        closeGithubEngage(365 * 5);
-        $githubPopup.addClass('love');
+        closeGithubEngage(365 * 5, 'love');
         $('.heart-wrapper').addClass('active');
       });
     }, 500);
