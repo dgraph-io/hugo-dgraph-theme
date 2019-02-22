@@ -45,11 +45,11 @@
         {{ end }}
 
         {{ if .Paginator.HasNext }}
-          <a class="paginator__active" href="{{ .Paginator.Next.URL }}">
+          <a class="next paginator__active" href="{{ .Paginator.Next.URL }}">
               Next Page&gt;
           </a>
         {{ else }}
-          <a class="paginator__gray">
+          <a class="next paginator__gray">
               Next Page&gt;
           </a>
         {{ end }}

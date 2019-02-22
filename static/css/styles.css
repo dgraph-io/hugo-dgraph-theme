@@ -2304,7 +2304,7 @@ img[data-src] {
 }
 @media screen and (max-width: 989px) {
   .page-footer__wrapper:before {
-    top: 40px;
+    display: none;
   }
 }
 @media screen and (max-width: 767px) {
@@ -2313,7 +2313,6 @@ img[data-src] {
   }
 }
 .page-footer-nav__title {
-  font-size: 14px;
   font-size: 0.875rem;
   letter-spacing: 0.025em;
   text-transform: uppercase;
@@ -2322,11 +2321,6 @@ img[data-src] {
 .page-footer-nav__list {
   padding: 25px 0;
   margin-bottom: 0;
-}
-@media screen and (max-width: 767px) {
-  .page-footer-nav__list {
-    padding-bottom: 0;
-  }
 }
 .page-footer-nav__item {
   display: block;
@@ -2518,6 +2512,9 @@ img[data-src] {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.paginator .next {
+  text-align: right;
 }
 .paginator__gray {
   color: #a4958c;
