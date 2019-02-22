@@ -4,7 +4,7 @@
   <div class="content container">
     <div class="row">
       {{ if eq .Page.Kind "taxonomy" }}
-        <nav aria-label="breadcrumb" class="breadcrumbs col-xs-12 col-lg-10 offset-lg-1">
+        <nav aria-label="breadcrumb" class="breadcrumbs col-12 offset-0 col-lg-10 offset-lg-1">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Dgraph Blog</a></li>
             <li class="breadcrumb-item active" aria-current="page">
@@ -15,7 +15,7 @@
         </nav>
       {{ end }}
 
-      <ul class="article__list col-xs-12 col-lg-10 offset-lg-1">
+      <ul class="article__list col-12 offset-0 col-md-10 offset-md-1">
         {{ range .Paginator.Pages }}
           {{ .Render "li" }}
         {{ end }}
@@ -23,34 +23,38 @@
     </div>
   </div>
 
-  <div class="paginator container">
-    {{ if .Paginator.HasPrev }}
-      <a class="paginator__active paginator__left" href="{{ .Paginator.Prev.URL }}">
-          < Previous Page
-      </a>
-    {{ else }}
-      <a class="paginator__gray paginator__left">
-          < Previous Page
-      </a>
-    {{ end }}
+  <div class="container">
+    <div class="row">
+      <div class="paginator col-12 offset-0 col-md-10 offset-md-1">
+        {{ if .Paginator.HasPrev }}
+          <a class="paginator__active" href="{{ .Paginator.Prev.URL }}">
+              &lt;Prev Page
+          </a>
+        {{ else }}
+          <a class="paginator__gray">
+              &lt;Prev Page
+          </a>
+        {{ end }}
 
-    {{ range $i, $sequence :=  (seq .Paginator.TotalPages) }}
-      {{if eq $.Paginator.PageNumber $sequence }}
-        <a class="paginator__pages paginator__selected" href="/page/{{ $sequence }}/">{{ $sequence }}</a>
-      {{else}}
-        <a class="paginator__pages paginator__gray" href="/page/{{ $sequence }}/">{{ $sequence }}</a>
-      {{end}}
-    {{ end }}
+        {{ range $i, $sequence :=  (seq .Paginator.TotalPages) }}
+          {{if eq $.Paginator.PageNumber $sequence }}
+            <a class="paginator__pages paginator__selected" href="/page/{{ $sequence }}/">{{ $sequence }}</a>
+          {{else}}
+            <a class="paginator__pages paginator__gray" href="/page/{{ $sequence }}/">{{ $sequence }}</a>
+          {{end}}
+        {{ end }}
 
-    {{ if .Paginator.HasNext }}
-      <a class="paginator__active paginator__right" href="{{ .Paginator.Next.URL }}">
-          Next Page >
-      </a>
-    {{ else }}
-      <a class="paginator__right paginator__gray">
-          Next Page >
-      </a>
-    {{ end }}
+        {{ if .Paginator.HasNext }}
+          <a class="paginator__active" href="{{ .Paginator.Next.URL }}">
+              Next Page&gt;
+          </a>
+        {{ else }}
+          <a class="paginator__gray">
+              Next Page&gt;
+          </a>
+        {{ end }}
+      </div>
+    </div>
   </div>
 
   {{ partial "community-footer.html" . }}
@@ -60,7 +64,4 @@
 
   <script type="text/javascript" src="/js/custom.js"></script>
   <script type="text/javascript" src="/js/script.min.js"></script>
-  <!-- Disqus comment count-->
-  <!-- Info: https://help.disqus.com/customer/portal/articles/565624-->
-  <script id="dsq-count-scr" src="//skgamingtest.disqus.com/count.js" async></script>
 </html>

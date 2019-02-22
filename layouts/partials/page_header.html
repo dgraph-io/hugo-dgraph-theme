@@ -1,7 +1,7 @@
 <header id="page-header" class="page-header">
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 offset-0 col-md-10 offset-md-1">
         <figure class="page-logo"><a href="/"><img src="/images/logo.svg" width="233" height="70" alt=""></a></figure>
 				{{if .Site.Params.github}}
           <span class="topnav-stargazers-wrapper">
@@ -9,15 +9,14 @@
           </span>
         {{end}}
 
-        <nav class="page-nav pull-right">
-          <ul class="page-nav__list">
-						{{if .Site.Params.demo}}
-						<li class="page-nav__item"><a href="{{.Site.Params.website}}" title="Dgraph Website" class="button button--outline page-nav__link page-nav__link--button">Home</a></li>
-						{{end}}
-          </ul>
-        </nav>
+        <a
+            href="{{.Site.Params.website}}"
+            title="Dgraph Website"
+            class="button button-dgraph-site button--outline pull-right"
+        >
+          Dgraph.io
+        </a>
       </div>
-      <a href="javascript:void(0)" title="Site Navigation" id="page-nav-button" class="button page-nav-button">Menu</a>
     </div>
   </div>
 </header>

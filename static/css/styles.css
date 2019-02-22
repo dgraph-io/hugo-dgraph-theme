@@ -1,21 +1,3 @@
-/* Author: Danijel GrabeÅ¾ */
-/* ======================================================================
-      ________________
-     / ______________ \
-    / /     __ _     \ \        Superawesome
-    \ \    / __  \   / /        Making websites not suck since 2007
-     \ \  | |  | |  / /         www.sprawsm.com
-      \ \ | |__| |_/ /          -------------------------------------
-       \ \ \___,__ _/
-        \ \      __             Front-end & Design:
-         \ \ __ / /             Superawesome team [dudes@sprawsm.com]
-          \ ____ /              Danijel GrabeÅ¾ [danijel@sprawsm.com]
-
- * ====================================================================== */
-
-/* ===========================================
- * Global classes
- * =========================================== */
 .hidden {
   display: none !important;
   visibility: hidden;
@@ -405,137 +387,6 @@ hr {
   position: relative;
   z-index: 6;
 }
-.usage-carousel__nav {
-  zoom: 1;
-  width: 100%;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-.usage-carousel__nav:before,
-.usage-carousel__nav:after {
-  content: "";
-  display: table;
-}
-.usage-carousel__nav:after {
-  clear: both;
-}
-.usage-carousel__nav:hover .usage-carousel__window:before {
-  opacity: 0.8;
-}
-.usage-carousel__nav:before,
-.usage-carousel__nav:after {
-  content: "";
-  width: 100%;
-  height: 60px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: 2;
-}
-.usage-carousel__nav:before {
-  top: -70px;
-  background: -webkit-linear-gradient(
-    rgba(255, 255, 255, 0.9) 40%,
-    rgba(255, 255, 255, 0.5) 100%
-  );
-  background: linear-gradient(
-    rgba(255, 255, 255, 0.9) 40%,
-    rgba(255, 255, 255, 0.5) 100%
-  );
-}
-.usage-carousel__controls {
-  width: 30px;
-  float: left;
-  margin-top: 10px;
-  margin-left: 15px;
-  position: relative;
-  z-index: 5;
-}
-.usage-carousel__controls .icon {
-  fill: #f0f0f0;
-  width: 30px;
-  height: 30px;
-  -webkit-transition: 0.2s fill ease-in-out;
-  transition: 0.2s fill ease-in-out;
-}
-.usage-carousel__controls .icon:hover {
-  fill: #ccc;
-}
-.usage-carousel__control-up .icon:active {
-  -webkit-transform: translateY(-2px);
-  transform: translateY(-2px);
-}
-.usage-carousel__control-down .icon:active {
-  -webkit-transform: translateY(2px);
-  transform: translateY(2px);
-}
-.usage-carousel__window {
-  width: 100%;
-  max-width: 350px;
-  height: 84px;
-  background-color: #ffffff;
-  position: relative;
-  float: left;
-}
-.usage-carousel__window:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  opacity: 0.4;
-  border-radius: 5px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-  -webkit-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
-}
-.usage-carousel__window .icon {
-  width: 30px;
-  height: 30px;
-  fill: #00aeef;
-  margin-top: 27px;
-  margin-left: 20px;
-}
-.usage-carousel__list {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -58px;
-}
-.usage-carousel__list.js-tilt {
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.usage-carousel__list.js-tilt--up {
-  -webkit-transform: translateY(15px);
-  transform: translateY(15px);
-}
-.usage-carousel__list.js-tilt--down {
-  -webkit-transform: translateY(-15px);
-  transform: translateY(-15px);
-}
-.usage-carousel__item {
-  font-size: 28px;
-  font-size: 1.75rem;
-  font-weight: 500;
-  color: #ccc;
-  margin: 0;
-  list-style-type: none;
-  display: block;
-}
-.usage-carousel__item:not(:last-child) {
-  margin-bottom: 50px;
-}
-.usage-carousel__item.is-active {
-  color: #333333;
-}
 .result__list {
   margin-bottom: 100px;
   min-height: 550px;
@@ -551,51 +402,6 @@ hr {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-.bolt-image {
-  position: relative;
-}
-.bolt-image:before {
-  content: "";
-  position: absolute;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 1300px;
-  height: 1600px;
-}
-@media screen and (max-width: 600px) {
-  .bolt-image:before {
-    display: none;
-  }
-}
-.bolt-image--top-front:before {
-  top: -1000px;
-  right: -200px;
-  background: url("../images/homepage/bolt__top--front.png");
-  z-index: 2;
-}
-.bolt-image--top-back:before {
-  top: -1000px;
-  right: -250px;
-  background: url("../images/homepage/bolt__top--back.png");
-  z-index: 1;
-}
-.bolt-image--bottom-front:before {
-  bottom: -600px;
-  left: -200px;
-  width: 1000px;
-  height: 1150px;
-  background: url("../images/homepage/bolt__bottom--front.png");
-  z-index: 2;
-}
-.bolt-image--bottom-back:before {
-  bottom: -600px;
-  left: -220px;
-  width: 1000px;
-  height: 1150px;
-  background: url("../images/homepage/bolt__bottom--back.png");
-  z-index: 1;
 }
 /* ===========================================
    About page styling
@@ -894,9 +700,6 @@ nav.breadcrumbs ol li .article-count {
   opacity: 0.8;
 }
 
-ul.article__list {
-  padding: 0;
-}
 .article__list .article__item {
   list-style-type: none;
   margin-bottom: 25px;
@@ -1142,9 +945,11 @@ ul.article__list {
   border: 1px solid #444;
   border-radius: 3px;
   color: #444;
+  display: inline-block;
   font-size: 14px;
   padding: 4px 8px;
-  margin-right: 6px;
+  margin: 0 6px 9px 0;
+  white-space: nowrap;
 }
 .article__item .tags a:hover {
   border-color: #f96315;
@@ -2452,33 +2257,16 @@ img[data-src] {
     border: none;
   }
 }
-.github-star--mobile {
-  text-align: right;
-}
-@media screen and (min-width: 989px) {
-  .github-star--mobile {
-    display: none;
-  }
-}
 .is-visible {
   display: block !important;
 }
-.page-nav-button {
-  font-size: 13px;
+.button-dgraph-site {
   font-size: 0.8125rem;
+  margin-top: 14px;
+  padding: 10px 15px;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
   font-weight: 700;
-  position: absolute;
-  z-index: 22;
-  right: 15px;
-  top: 28px;
-  background-color: #333333;
-}
-@media screen and (min-width: 989px) {
-  .page-nav-button {
-    display: none;
-  }
+  color: #f96315;
 }
 /* ===========================================
    Footer styling
@@ -2488,6 +2276,7 @@ img[data-src] {
   position: relative;
   z-index: 5;
   margin-top: 80px;
+  padding-top: 20px;
 }
 @media screen and (min-width: 989px) {
   .page-footer {
@@ -2500,7 +2289,7 @@ img[data-src] {
 .page-footer__wrapper:before {
   content: "";
   display: block;
-  width: 3500px;
+  width: 150vw;
   height: 200px;
   position: absolute;
   background: #fff;
@@ -2723,12 +2512,12 @@ img[data-src] {
     margin-bottom: 25px;
   }
 }
-/* ===========================================
-   Pagination styling
-   =========================================== */
+
+/* Pagination styling */
 .paginator {
-  position: relative;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .paginator__gray {
   color: #a4958c;
@@ -2736,19 +2525,12 @@ img[data-src] {
 .paginator__gray:hover {
   color: #a4958c;
 }
-.paginator__left {
-  position: absolute;
-  left: 0px;
-}
-.paginator__right {
-  position: absolute;
-  right: 0px;
-}
 .paginator__pages {
   display: inline-block;
   width: 30px;
   height: 30px;
   line-height: 30px;
+  text-align: center;
 }
 .paginator__selected {
   background-color: #ffe8e1;

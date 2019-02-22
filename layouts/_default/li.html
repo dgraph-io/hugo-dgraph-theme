@@ -7,25 +7,25 @@
 	<a href="{{ .Permalink }}" class="clearfix">
 		<h3 class="article__title">{{ .Title }}</h3>
 	</a>
-	<div class="row">
-		<div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0 opening__image">
-			<a href="{{ .Permalink }}" class="no-hover">
-				<div
-						class="img_square"
-						style="background-image: url({{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}); {{ with .Params.thumbVerticalPosition }}background-position: 50% {{ . }};{{ end }}">
+		<div class="row">
+			<div class="col-12 col-lg-3 opening__image">
+				<a href="{{ .Permalink }}" class="no-hover">
+					<div
+							class="img_square"
+							style="background-image: url({{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}); {{ with .Params.thumbVerticalPosition }}background-position: 50% {{ . }};{{ end }}">
+					</div>
+				</a>
+			</div>
+			<div class="col-12 col-lg-9">
+				<div class="summary">{{ .Summary }}</div>
+				<div class="tags">
+					{{ range .Param "tags" }}
+							{{ $name := . }}
+							{{ with $.Site.GetPage (printf "/%s/%s" "tags" ($name | urlize)) }}
+									<a href="{{ .Permalink }}">{{ $name }}</a>
+							{{ end }}
+					{{ end }}
 				</div>
-			</a>
-		</div>
-		<div class="col-md-12 col-lg-9">
-			<div class="summary">{{ .Summary }}</div>
-			<div class="tags">
-				{{ range .Param "tags" }}
-						{{ $name := . }}
-						{{ with $.Site.GetPage (printf "/%s/%s" "tags" ($name | urlize)) }}
-								<a href="{{ .Permalink }}">{{ $name }}</a>
-						{{ end }}
-				{{ end }}
 			</div>
 		</div>
-	</div>
 </li>
