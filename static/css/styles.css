@@ -2294,23 +2294,25 @@ img[data-src] {
 }
 @media screen and (min-width: 989px) {
   .page-footer {
-    margin-top: 180px;
+    margin-top: 10vw;
   }
 }
 .page-footer__wrapper {
   position: relative;
+  width: 100vw;
+  overflow: hidden;
 }
 .page-footer__wrapper:before {
   content: "";
   display: block;
   width: 150vw;
-  height: 200px;
+  height: 100%;
   position: absolute;
   background: #fff;
-  -webkit-transform: rotate(4deg);
   transform: rotate(4deg);
-  left: -10%;
-  top: -70px;
+  transform-origin: 100% 0%;
+  right: 0;
+  top: 10vw;
   right: 0;
   z-index: 4;
   pointer-events: none;

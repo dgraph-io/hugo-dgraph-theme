@@ -48,12 +48,20 @@ window.addEventListener("hashchange", function(e) {
   var FLAG_COOKIE = 'noGithubEngage';
   var NUM_DAYS_COOKIE = 'disableGithubCounterDays';
 
+  function gaEvent(cat, action, label, value) {
+    if (!window.ga) {
+      console.warn('no ga', arguments)
+      return
+    }
+    window.ga('send', 'event', cat, action, label, value);
+  }
+
   var $githubPopup = $('.github-engage');
-  console.log('GH Engage', setCookie, getCookie, Visibility, $githubPopup);
 
   function showGithubEngage() {
     if (!getCookie(FLAG_COOKIE)) {
-      $githubPopup.addClass('open')
+      $githubPopup.addClass('open');
+      gaEvent('Blog', 'github-widget-show');
     }
   }
   function closeGithubEngage(daysToShutUp, addClass) {
@@ -61,17 +69,20 @@ window.addEventListener("hashchange", function(e) {
     addClass && $githubPopup.addClass(addClass);
 
     setCookie(FLAG_COOKIE, 'value', daysToShutUp);
+    gaEvent('Blog', 'github-widget-setdisable', 'days', daysToShutUp);
   }
   $('.github-engage .github-close').click(function() {
     // Nag user again in 2, 14, 98,... days.
     // Restart after two years.
     var curDisableDays = getCookie(NUM_DAYS_COOKIE) || 2;
     setCookie(NUM_DAYS_COOKIE, curDisableDays * 7, 365 * 2);
+    gaEvent('Blog', 'github-widget-declined');
 
     closeGithubEngage(curDisableDays, 'dismissAnimation');
   });
 
   document.getElementById('star-us-wrapper').addEventListener('click', function() {
+    gaEvent('Blog', 'github-widget-converted');
     setTimeout(function() {
       Visibility.onVisible(function() {
         closeGithubEngage(365 * 5, 'love');
@@ -82,6 +93,7 @@ window.addEventListener("hashchange", function(e) {
 
   // Wait 60 seconds as long as page is visible.
   var visibilityCountdown = 60;
+  gaEvent('Blog', 'github-widget-start-timer');
   var visibilityId = Visibility.every(1000, function () {
     visibilityCountdown--;
     if (visibilityCountdown < 0) {
