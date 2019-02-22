@@ -2154,8 +2154,22 @@ img[data-src] {
 }
 .page-logo img {
   display: block;
-  max-width: 150px;
+  width: 233px;
+  height: 70px;
 }
+
+@media screen and (max-width:420px) {
+   .page-header .page-logo img {
+     width: 80px;
+   }
+   .page-header .topnav-stargazers-wrapper {
+     margin-left: 10px;
+   }
+   .page-header .button-dgraph-site {
+     padding: 8px;
+   }
+}
+
 .page-nav {
   zoom: 1;
 }
