@@ -328,23 +328,18 @@
     </div>
 
     <footer class="article-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-              {{ partial "author_profile.html" .}}
-              {{ partial "editor_profile.html" .}}
-              </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            {{ partial "author_profile.html" .}}
+            {{ partial "editor_profile.html" .}}
           </div>
-    </footer>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div id='discourse-comments'></div>
+          <div class="col-12">
+            <div id='discourse-comments'></div>
+          </div>
         </div>
       </div>
-    </div>
+    </footer>
   </div>
 
   {{ partial "community-footer.html" . }}

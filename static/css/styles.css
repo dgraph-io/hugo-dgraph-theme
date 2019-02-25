@@ -956,9 +956,8 @@ nav.breadcrumbs ol li .article-count {
   text-decoration: none;
 }
 .article-footer {
-  padding: 60px 0 230px;
+  padding: 60px 0 30px;
   background-color: #f9f7f6;
-  margin-bottom: -200px;
 }
 @media screen and (min-width: 767px) {
   .article-footer {
@@ -2298,6 +2297,7 @@ img[data-src] {
   }
 }
 .page-footer__wrapper {
+  background-color: #f9f7f6;
   position: relative;
   width: 100vw;
   overflow: hidden;
