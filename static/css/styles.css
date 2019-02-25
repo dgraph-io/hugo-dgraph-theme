@@ -1026,6 +1026,9 @@ nav.breadcrumbs ol li .article-count {
 #discourse-comments {
   box-shadow: 0 0 1px 16px #fff;
 }
+#discourse-comments > iframe {
+  display: block;
+}
 @media screen and (min-width: 450px) {
   .similar-article {
     margin-left: 90px;
