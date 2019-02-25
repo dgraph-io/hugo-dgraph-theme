@@ -2305,6 +2305,9 @@ img[data-src] {
   width: 100vw;
   overflow: hidden;
 }
+.blog .page-footer__wrapper {
+  background-color: #fff;
+}
 .page-footer__wrapper:before {
   content: "";
   display: block;
