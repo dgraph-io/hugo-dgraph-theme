@@ -128,6 +128,23 @@ if (window.location.host.indexOf("dgraph.io") > -1) {
 </script>
 {{ end }}
 
+{{ if .Site.Params.keenIoProjectId }}
+<script crossorigin src="https://cdn.jsdelivr.net/npm/keen-tracking@4"></script>
+<script>
+  if (window.location.host.indexOf("dgraph.io") > -1) {
+  	var keenClient = new KeenTracking({
+  	  projectId: {{ .Site.Params.keenIoProjectId }},
+  	  writeKey: {{ .Site.Params.keenIoWriteKey }}
+  	});
+    keenClient.initAutoTracking();
+
+  	keenClient.recordEvent('blog-article-visit', {
+  		pathname: window.location.pathname,
+  	})
+  }
+</script>
+{{ end }}
+
 <script>
 $(document.links)
   .filter(function() {
