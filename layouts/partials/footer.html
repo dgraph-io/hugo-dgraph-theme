@@ -145,6 +145,28 @@ if (window.location.host.indexOf("dgraph.io") > -1) {
 </script>
 {{ end }}
 
+{{ if .Site.Params.countlyKey }}
+<script>
+  window.Countly = window.Countly || {};
+  Countly.q = Countly.q || [];
+  Countly.app_key = {{ .Site.Params.countlyKey }};
+  Countly.url = {{ .Site.Params.countlyDomain }};
+
+  Countly.q.push(['track_sessions']);
+  Countly.q.push(['track_pageview']);
+  (function() {
+  	var cly = document.createElement('script');
+  	cly.type = 'text/javascript';
+  	cly.async = true;
+  	cly.src = {{ .Site.Params.countlyJs }};
+  	cly.onload = function() {
+      Countly.init()
+  	};
+  	document.body.appendChild(cly);
+  })();
+</script>
+{{ end }}
+
 <script>
 $(document.links)
   .filter(function() {
