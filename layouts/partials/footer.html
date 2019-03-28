@@ -149,8 +149,6 @@ if (window.location.host.indexOf("dgraph.io") > -1) {
 <script>
   window.Countly = window.Countly || {};
   Countly.q = Countly.q || [];
-  Countly.app_key = {{ .Site.Params.countlyKey }};
-  Countly.url = {{ .Site.Params.countlyDomain }};
 
   Countly.q.push(['track_sessions']);
   Countly.q.push(['track_pageview']);
@@ -160,7 +158,11 @@ if (window.location.host.indexOf("dgraph.io") > -1) {
   	cly.async = true;
   	cly.src = {{ .Site.Params.countlyJs }};
   	cly.onload = function() {
-      Countly.init()
+      Countly.init({
+        app_key: {{ .Site.Params.countlyKey }},
+        url: {{ .Site.Params.countlyDomain }},
+        force_post: true,
+      })
   	};
   	document.body.appendChild(cly);
   })();
