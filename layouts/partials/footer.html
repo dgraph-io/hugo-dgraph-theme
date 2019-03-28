@@ -206,7 +206,9 @@ $(document.links)
 <script type="text/javascript" src="https://downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
 <!-- Mailchimp embed leaks its define() into the window. just one more thing they're doing wrong -->
 <script type='text/javascript'>
-  window.define = undefined
+  window.mailchimp_require = require
+  window.mailchimp_define = define
+  require = define = undefined
 </script>
 
 <script type="text/javascript">
@@ -226,7 +228,7 @@ $(document.links)
       elements[0].parentNode.parentNode.removeChild(elements[0].parentNode);
     }
 
-    require(["mojo/signup-forms/Loader"], function(L) {
+    mailchimp_require(["mojo/signup-forms/Loader"], function(L) {
       if (!skip) {
         L.start({"baseUrl":"mc.us17.list-manage.com","uuid":"f6c6a28bb40d10e26b88fff1c","lid":"e85c448cac"});
       }
