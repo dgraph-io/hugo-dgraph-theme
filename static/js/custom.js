@@ -43,3 +43,33 @@ window.addEventListener("hashchange", function(e) {
     }
   }
 }, false);
+
+(function() {
+  // This code sets visibility: hidden for images outside the user's viewport.
+  // It adds a listener for scroll events to perform realtime update of the images state.
+  var allImages = $('.article-content img')
+  if (allImages.length < 10) {
+    return;
+  }
+
+  function onScroll(e) {
+    allImages.each(function(i, img) {
+      img = $(img)
+      var top = img.offset().top
+      var h = img.height()
+      var viewBegin = document.scrollingElement.scrollTop
+      var viewEnd = viewBegin + window.outerHeight
+      viewBegin -= 200
+      viewEnd += 200
+      var isVisible = top > viewBegin && top < viewEnd
+          || top+h > viewBegin && top+h < viewEnd
+          || top <= viewBegin && top+h >= viewEnd;
+      img.css('visibility', isVisible ? 'visible' : 'hidden')
+    })
+  }
+
+  window.addEventListener(
+      'scroll',
+      _.throttle(onScroll, 80, {leading: false, trailing: true}),
+  );
+})()
