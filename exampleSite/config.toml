@@ -2,6 +2,8 @@
 baseurl = "http://hugo.spf13.com/"
 title = "Hugo Themes"
 author = "Steve Francia"
+theme = "hugo-dgraph-theme"
+themesDir = "../.."
 
 # Number of blogs you want to list on a single page.
 paginate = 5
