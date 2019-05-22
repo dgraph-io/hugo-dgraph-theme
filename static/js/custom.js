@@ -52,24 +52,91 @@ window.addEventListener("hashchange", function(e) {
     return;
   }
 
-  function onScroll(e) {
+  function onScroll() {
     allImages.each(function(i, img) {
       img = $(img)
-      var top = img.offset().top
       var h = img.height()
+      var top = img.offset().top
+      var bottom = top + h
+
       var viewBegin = document.scrollingElement.scrollTop
       var viewEnd = viewBegin + window.outerHeight
-      viewBegin -= 200
-      viewEnd += 200
+      viewBegin -= 100
+      viewEnd += 100
       var isVisible = top > viewBegin && top < viewEnd
-          || top+h > viewBegin && top+h < viewEnd
-          || top <= viewBegin && top+h >= viewEnd;
-      img.css('visibility', isVisible ? 'visible' : 'hidden')
+          || bottom > viewBegin && bottom < viewEnd
+          || top <= viewBegin && bottom >= viewEnd;
+
+      var oldVisibility = img.css('visibility');
+      var newVisibility = isVisible ? 'visible' : 'hidden';
+      if (oldVisibility != newVisibility) {
+        img.css('visibility', newVisibility)
+      }
     })
   }
+  $(onScroll);
 
   window.addEventListener(
       'scroll',
       _.throttle(onScroll, 80, {leading: false, trailing: true}),
   );
+})()
+
+(function () {
+  var FLAG_COOKIE = 'noGithubEngage';
+  var NUM_DAYS_COOKIE = 'disableGithubCounterDays';
+
+  function gaEvent(cat, action, label, value) {
+    if (!window.ga) {
+      console.warn('no ga', arguments)
+      return
+    }
+    window.ga('send', 'event', cat, action, label, value);
+  }
+
+  var $githubPopup = $('.github-engage');
+
+  function showGithubEngage() {
+    if (!getCookie(FLAG_COOKIE)) {
+      $githubPopup.addClass('open');
+      gaEvent('Blog', 'github-widget-show');
+    }
+  }
+  function closeGithubEngage(daysToShutUp, addClass) {
+    $githubPopup.removeClass('open');
+    addClass && $githubPopup.addClass(addClass);
+
+    setCookie(FLAG_COOKIE, 'value', daysToShutUp);
+    gaEvent('Blog', 'github-widget-setdisable', 'days', daysToShutUp);
+  }
+  $('.github-engage .github-close').click(function() {
+    // Nag user again in 2, 14, 98,... days.
+    // Restart after two years.
+    var curDisableDays = getCookie(NUM_DAYS_COOKIE) || 2;
+    setCookie(NUM_DAYS_COOKIE, curDisableDays * 7, 365 * 2);
+    gaEvent('Blog', 'github-widget-declined');
+
+    closeGithubEngage(curDisableDays, 'dismissAnimation');
+  });
+
+  document.getElementById('star-us-wrapper').addEventListener('click', function() {
+    gaEvent('Blog', 'github-widget-converted');
+    setTimeout(function() {
+      Visibility.onVisible(function() {
+        closeGithubEngage(365 * 5, 'love');
+        $('.heart-wrapper').addClass('active');
+      });
+    }, 500);
+  }, /* capture = */ true);
+
+  // Wait 60 seconds as long as page is visible.
+  var visibilityCountdown = 60;
+  gaEvent('Blog', 'github-widget-start-timer');
+  var visibilityId = Visibility.every(1000, function () {
+    visibilityCountdown--;
+    if (visibilityCountdown < 0) {
+      Visibility.stop(visibilityId);
+      showGithubEngage();
+    }
+  });
 })()
