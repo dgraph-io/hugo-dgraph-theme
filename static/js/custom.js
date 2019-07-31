@@ -44,7 +44,7 @@ window.addEventListener("hashchange", function(e) {
   }
 }, false);
 
-(function() {
+var intermediateValNotFunc = function() {
   // This code sets visibility: hidden for images outside the user's viewport.
   // It adds a listener for scroll events to perform realtime update of the images state.
   var allImages = $('.article-content img')
@@ -139,4 +139,6 @@ window.addEventListener("hashchange", function(e) {
       showGithubEngage();
     }
   });
-})()
+};
+
+intermediateValNotFunc()
