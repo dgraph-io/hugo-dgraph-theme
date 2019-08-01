@@ -96,7 +96,9 @@
 </div>
 
     <script src="{{ .Site.BaseURL }}/js/clipboard.min.js"></script>
-    <script src="{{ .Site.BaseURL }}/js/runnable.js?{{ now }}"></script>
+    <script
+      src='{{ .Site.BaseURL }}/js/runnable.js?{{ md5 (readFile "themes/hugo-dgraph-theme/static/js/runnable.js") }}'
+    ></script>
     <script>
       hljs.initHighlightingOnLoad();
     </script>
@@ -237,15 +239,22 @@ $(document.links)
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/visibility.js/1.2.4/visibility.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-<link href="{{ .Site.BaseURL }}css/heart.css?{{ now }}" rel="stylesheet">
-<link href="{{ .Site.BaseURL }}css/github-engage.css?{{ now }}" rel="stylesheet">
+<link
+  href='{{ .Site.BaseURL }}css/heart.css?{{ md5 (readFile "themes/hugo-dgraph-theme/static/css/heart.css") }}'
+  rel="stylesheet">
+<link
+  href='{{ .Site.BaseURL }}css/github-engage.css?{{ md5 (readFile "themes/hugo-dgraph-theme/static/css/github-engage.css") }}'
+  rel="stylesheet">
 
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"
   integrity="sha256-7/yoZS3548fXSRXqc/xYzjsmuW3sFKzuvOCHd06Pmps="
   crossorigin="anonymous"
 ></script>
-<script type="text/javascript" src="/js/custom.js?{{ now }}"></script>
+<script
+  type="text/javascript"
+  src='/js/custom.js?{{ md5 (readFile "themes/hugo-dgraph-theme/static/js/custom.js") }}'
+></script>
 
 </body>
 </html>

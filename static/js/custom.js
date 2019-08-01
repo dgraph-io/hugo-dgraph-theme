@@ -1,3 +1,5 @@
+// Kitchen Sink of interactive features on the page.
+
 $(document).ready(function() {
   var height = $("#page-header").height()
   $("a.internal").click(function(e) {
