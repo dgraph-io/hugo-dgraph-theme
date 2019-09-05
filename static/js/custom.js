@@ -111,7 +111,9 @@ var intermediateValNotFunc = function () {
     setCookie(FLAG_COOKIE, 'value', daysToShutUp);
     gaEvent('Blog', 'github-widget-setdisable', 'days', daysToShutUp);
   }
-  $('.github-engage .github-close').click(function() {
+  $('.github-engage .github-close').click(function(e) {
+    e.preventDefault();
+    e.stopPropagation();
     // Nag user again in 2, 14, 98,... days.
     // Restart after two years.
     var curDisableDays = getCookie(NUM_DAYS_COOKIE) || 2;
