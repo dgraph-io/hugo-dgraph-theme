@@ -195,37 +195,6 @@ $(document.links)
     document.cookie = cname + "=" + cvalue + ";" + expires + ";domain=.dgraph.io;path=/";
   }
 </script>
-<script type="text/javascript" src="https://downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
-<!-- Mailchimp embed leaks its define() into the window. just one more thing they're doing wrong -->
-<script type='text/javascript'>
-  window.mailchimp_require = require
-  window.mailchimp_define = define
-  require = define = undefined
-</script>
-
-<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
-<script>
-  window.dojoRequire(
-  		["mojo/signup-forms/Loader"],
-  		function(L) {
-  			L.start({
-  					"baseUrl":"mc.us17.list-manage.com",
-  					"uuid":"f6c6a28bb40d10e26b88fff1c",
-  					"lid":"e85c448cac",
-  					"uniqueMethods":true
-  			})
-  		})
-</script>
-
-<script>
-  setInterval(function() {
-    var cookieVal = getCookie('MCPopupClosed');
-    if (cookieVal) {
-      // Unlike mailchimps standard behavior setCookie pushes cookie to all *.dgraph.io subdomains
-      setCookie('MCPopupClosed', cookieVal, 5)
-    }
-  }, 3000);
-</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/visibility.js/1.2.4/visibility.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
@@ -245,6 +214,9 @@ $(document.links)
   type="text/javascript"
   src='/js/custom.js?{{ md5 (readFile "themes/hugo-dgraph-theme/static/js/custom.js") }}'
 ></script>
+
+<script src="//unpkg.com/@dgraph-io/community/dist/index.iife.js"></script>
+<link href="//unpkg.com/@dgraph-io/community/dist/index.iife.css" rel="stylesheet">
 
 </body>
 </html>

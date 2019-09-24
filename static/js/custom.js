@@ -11,22 +11,6 @@ $(document).ready(function() {
   });
 });
 
-// Community selector
-$(document).on("click", ".community-cta", function(e) {
-  e.stopPropagation();
-  e.preventDefault();
-  $(this).closest(".community-cta-wrapper").toggleClass("open");
-});
-
-$(document).on("click", ".community-link", function(e) {
-  e.stopPropagation();
-  $(this).closest(".community-cta-wrapper").toggleClass("open");
-});
-
-$(document).click(function() {
-  $(".community-cta-wrapper").removeClass("open");
-});
-
 // Fix scroll position after every click on an anchor element.
 // Doesn't work when currently targeted anchor is clicked, but good enough
 // since this implementation is less likely to break
