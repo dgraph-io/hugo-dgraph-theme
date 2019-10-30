@@ -103,23 +103,6 @@
       hljs.initHighlightingOnLoad();
     </script>
 
-{{ with .Site.Params.googleAnalytics }}
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id={{ . }}"
-  ></script>
-  <script>
-    if (window.location.host.indexOf("dgraph.io") > -1) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', '{{ . }}');
-    }
-  </script>
-{{ end }}
-
 {{ if .Site.Params.keenIoProjectId }}
 <script crossorigin src="https://cdn.jsdelivr.net/npm/keen-tracking@4"></script>
 <script>
@@ -188,8 +171,7 @@ $(document.links)
   src='/js/custom.js?{{ md5 (readFile "themes/hugo-dgraph-theme/static/js/custom.js") }}'
 ></script>
 
-<script src="//unpkg.com/@dgraph-io/community/dist/index.iife.js"></script>
-<link href="//unpkg.com/@dgraph-io/community/dist/index.iife.css" rel="stylesheet">
+<script src="//unpkg.com/@dgraph-io/community"></script>
 
 </body>
 </html>
