@@ -2581,3 +2581,21 @@ img[data-src] {
     border-top: 1px solid #ccc !important;
   }
 }
+
+/* Search bar */
+#searchbox {
+  vertical-align: top;
+}
+
+#searchbox > input {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+#searchbox > .search-results {
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  border: grey solid 2px;
+  border-radius: 10px;
+}

@@ -9,8 +9,7 @@
 			</span>
 		  {{end}}
   
-		  <div id="searchbox"></div>
-		  <div id="autocomplete"></div>
+		  <span id="searchbox"></span>
   
 		  <a
 			  href="{{.Site.Params.website}}"
@@ -30,6 +29,7 @@
 		  ${hits.length} results found
 		  <ol>
 			${hits
+				.slice(0, 10)
 			  .map(
 				hit =>
 				  `<li>
@@ -51,11 +51,13 @@
 		  const input = document.createElement('input');
 		  const ul = document.createElement('ul');
 		  
-		  ul.style.backgroundColor = "white";
+		  ul.className = "search-results";
   
 		  input.addEventListener('input', event => {
 			refine(event.currentTarget.value);
 		  });
+
+		  input.onblur = () => ul.style.display = "none";
   
 		  widgetParams.container.appendChild(input);
 		  widgetParams.container.appendChild(ul);
@@ -63,12 +65,16 @@
   
 		widgetParams.container.querySelector('input').value = currentRefinement;
 		
-		if (currentRefinement) {
+		const showSearchResults = widgetParams.container.querySelector('input') === document.activeElement;
+		console.log(showSearchResults);
+		if (currentRefinement && showSearchResults) {
+			widgetParams.container.querySelector('ul').style.display = "";
 			widgetParams.container.querySelector('ul').innerHTML = indices
 			  .map(renderIndexListItem)
 			  .join('');
 		  } else {
 			  widgetParams.container.querySelector('ul').innerHTML = "";
+			  widgetParams.container.querySelector('ul').style.display = "none"
 		  }
 	  };
   
@@ -89,7 +95,7 @@
   
 		
 		customAutocomplete({
-		  container: document.querySelector('#autocomplete'),
+		  container: document.querySelector('#searchbox'),
 		})
 	  ]);
 	  
