@@ -1,22 +1,99 @@
 <header id="page-header" class="page-header">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 offset-0 col-md-10 offset-md-1">
-        <figure class="page-logo"><a href="/"><img src="/images/logo.svg" alt="Dgraph Logo"></a></figure>
-				{{if .Site.Params.github}}
-          <span class="topnav-stargazers-wrapper">
-            <a href="https://github.com/{{.Site.Params.github}}" data-show-count="true" aria-label="Star Dgraph on GitHub" class="github-button">Star</a>
-          </span>
-        {{end}}
-
-        <a
-            href="{{.Site.Params.website}}"
-            title="Dgraph Website"
-            class="button button-dgraph-site button--outline pull-right"
-        >
-          Dgraph.io
-        </a>
-      </div>
-    </div>
-  </div>
-</header>
+	<div class="container">
+	  <div class="row">
+		<div class="col-12 offset-0 col-md-10 offset-md-1">
+		  <figure class="page-logo"><a href="/"><img src="/images/logo.svg" alt="Dgraph Logo"></a></figure>
+				  {{if .Site.Params.github}}
+			<span class="topnav-stargazers-wrapper">
+			  <a href="https://github.com/{{.Site.Params.github}}" data-show-count="true" aria-label="Star Dgraph on GitHub" class="github-button">Star</a>
+			</span>
+		  {{end}}
+  
+		  <div id="searchbox"></div>
+		  <div id="autocomplete"></div>
+  
+		  <a
+			  href="{{.Site.Params.website}}"
+			  title="Dgraph Website"
+			  class="button button-dgraph-site button--outline pull-right"
+		  >
+			Dgraph.io
+		  </a>
+		</div>
+	  </div>
+	</div>
+  
+	<script>
+	// Helper for the render function
+	  const renderIndexListItem = ({ indexId, hits }) => `
+		<li> 
+		  ${hits.length} results found
+		  <ol>
+			${hits
+			  .map(
+				hit =>
+				  `<li>
+					  <a href="${hit.permalink}">
+						  ${instantsearch.highlight({ attribute: 'title', hit })}
+					  </a>
+				  </li>`
+			  )
+			  .join('')}
+		  </ol>
+		</li>
+	  `;
+	  
+	  // Create the render function
+	  const renderAutocomplete = (renderOptions, isFirstRender) => {
+		const { indices, currentRefinement, refine, widgetParams } = renderOptions;
+  
+		if (isFirstRender) {
+		  const input = document.createElement('input');
+		  const ul = document.createElement('ul');
+		  
+		  ul.style.backgroundColor = "white";
+  
+		  input.addEventListener('input', event => {
+			refine(event.currentTarget.value);
+		  });
+  
+		  widgetParams.container.appendChild(input);
+		  widgetParams.container.appendChild(ul);
+		}
+  
+		widgetParams.container.querySelector('input').value = currentRefinement;
+		
+		if (currentRefinement) {
+			widgetParams.container.querySelector('ul').innerHTML = indices
+			  .map(renderIndexListItem)
+			  .join('');
+		  } else {
+			  widgetParams.container.querySelector('ul').innerHTML = "";
+		  }
+	  };
+  
+	  // Create the custom widget
+	  const customAutocomplete = instantsearch.connectors.connectAutocomplete(
+		renderAutocomplete
+	  );
+	  
+	  
+  
+	  const client = algoliasearch('ACO13Q5JXW', '140be40b311ca64b71564f19bb2f0995');
+	  // const index = client.initIndex('/');
+	  const search = instantsearch({
+		indexName: 'dgraph_blog',
+		searchClient: client,
+	  });
+	  search.addWidgets([
+  
+		
+		customAutocomplete({
+		  container: document.querySelector('#autocomplete'),
+		})
+	  ]);
+	  
+	  search.start();
+	</script>
+  </header>
+  
