@@ -2596,6 +2596,49 @@ img[data-src] {
   background-color: white;
   position: absolute;
   width: 100%;
-  border: grey solid 2px;
+  border: grey solid 1px;
   border-radius: 10px;
+}
+
+.search-results {
+  list-style: none;
+  padding: 10px;
+}
+
+.search-results > li > ol {
+  padding: 10px;
+}
+
+.search-listing {
+  background-color: white;
+  list-style: none;
+  cursor: pointer;
+  border-bottom: 1px solid gainsboro;
+  padding: 10px;
+  margin-bottom: 0px;
+}
+
+.search-listing:hover {
+  background-color: #eeeeee8a;
+}
+
+.search-listing > .title {
+  font-weight: bold;
+}
+
+.search-listing > .summary {
+  font-size: 0.75em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.number-of-results {
+  font-size: 0.75em;
+  padding-left: 10px;
+}
+
+.search-input {
+  padding: 4px 8px;
+  border-radius: 4px;
 }
