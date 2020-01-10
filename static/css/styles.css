@@ -2587,7 +2587,19 @@ img[data-src] {
   vertical-align: top;
 }
 
+.search-button {
+  vertical-align: top;
+  margin-left: 4px;
+}
+
+@media screen and (max-width: 767px) {
+  .search-button > i {
+    padding: 4px;
+  }
+}
+
 #searchbox > input {
+  width: 100%;
   margin-top: 20px;
   margin-left: 10px;
 }
