@@ -2600,13 +2600,10 @@ img[data-src] {
 
 #searchbox > input {
   width: 100%;
-  margin-top: 20px;
-  margin-left: 10px;
 }
 
 #searchbox > .search-results {
   background-color: white;
-  position: absolute;
   width: 100%;
   border: grey solid 1px;
   border-radius: 10px;
