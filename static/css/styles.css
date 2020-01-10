@@ -2606,7 +2606,7 @@ img[data-src] {
 }
 
 .search-results > li > ol {
-  padding: 10px;
+  padding: 0px 10px;
 }
 
 .search-listing {
@@ -2633,12 +2633,24 @@ img[data-src] {
   overflow: hidden;
 }
 
-.number-of-results {
+.results-header {
+  display: flex;
+}
+
+.results-header > .number-of-results {
   font-size: 0.75em;
   padding-left: 10px;
+}
+
+.results-header > .close-button {
+  flex: 1 0;
+  text-align: right;
+  font-size: 0.75em;
+  cursor: pointer;
 }
 
 .search-input {
   padding: 4px 8px;
   border-radius: 4px;
 }
+

@@ -3,8 +3,13 @@ const parseSummary = (summary) => summary.trim().replace("<p>", "").replace("</p
 // Helper for the render function
 const renderIndexListItem = ({ indexId, hits }) => `
 <li> 
-	<div class="number-of-results">
-		${hits.length} results found.
+	<div class="results-header">
+		<div class="number-of-results">
+			${hits.length} results found.
+		</div>
+		<div class="close-button">
+			XXXX
+		</div>
 	</div>
 
   	<ol>
@@ -18,6 +23,7 @@ const renderIndexListItem = ({ indexId, hits }) => `
 					>
 					<div class="title">${instantsearch.highlight({ attribute: 'title', hit })}</div>
 					<div class="summary">${parseSummary(hit.summary)} </div>
+					<div>${hit.tags}</div>
 				</li>`
 			)
 			.join('')}
