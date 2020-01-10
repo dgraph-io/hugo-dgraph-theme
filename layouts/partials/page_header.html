@@ -26,7 +26,16 @@
 		const parseSummary = (summary) => summary.trim().replace("<p>", "").replace("</p>", "");
 
 const renderTags = tags => `
-
+	<div class="tag-wrapper">
+	${
+		tags.map(tag => `
+			<span class="tag">
+				${tag}
+			</span>
+		`)
+		.join('')
+	}
+	</div>
 `;
 
 // Helper for the render function
@@ -52,7 +61,7 @@ const renderIndexListItem = ({ indexId, hits }) => `
 					>
 					<div class="title">${instantsearch.highlight({ attribute: 'title', hit })}</div>
 					<div class="summary">${parseSummary(hit.summary)} </div>
-					<div>${hit.tags}</div>
+					<div>${renderTags(hit.tags || [])}</div>
 				</li>`
 			)
 			.join('')}
