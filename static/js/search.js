@@ -1,3 +1,8 @@
+// Algolia vars
+const appId = '2GTU22IEZ3';
+const publicKey = 'da500396d9ce9f97b84ac27fe1a49ad5';
+const index = 'dgraph_blog';
+
 let showSearch = true;
 let widgetContainer = {};
 
@@ -111,10 +116,10 @@ const createSearch = () => {
 	);
 
 	// Algolia client
-	const client = algoliasearch('ACO13Q5JXW', '140be40b311ca64b71564f19bb2f0995');
+	const client = algoliasearch(appId, publicKey);
 	
 	const search = instantsearch({
-		indexName: 'dgraph_blog',
+		indexName: index,
 		searchClient: client,
 	});
 	search.addWidgets([
