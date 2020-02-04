@@ -2581,3 +2581,126 @@ img[data-src] {
     border-top: 1px solid #ccc !important;
   }
 }
+
+/* Search bar */
+#searchbox {
+  vertical-align: top;
+}
+
+.search-button {
+  vertical-align: top;
+  margin-left: 4px;
+}
+
+@media screen and (max-width: 767px) {
+  .search-button > i {
+    padding: 4px;
+  }
+}
+
+#searchbox > input {
+  width: 100%;
+}
+
+#searchbox > .search-results {
+  background-color: white;
+  width: 100%;
+  border: gainsboro solid 1px;
+  border-radius: 10px;
+}
+
+.search-results {
+  list-style: none;
+  padding: 10px;
+  z-index: 2;
+  position: relative;
+  margin-top: 10px;
+}
+
+.search-results > li > ol {
+  padding: 0px 10px;
+}
+
+.search-listing {
+  background-color: white;
+  list-style: none;
+  cursor: pointer;
+  border-bottom: 1px solid gainsboro;
+  padding: 10px;
+  margin-bottom: 0px;
+}
+
+.search-listing:hover {
+  background-color: #eeeeee8a;
+}
+
+.search-listing > .title {
+  font-weight: bold;
+}
+
+.search-listing > .summary {
+  font-size: 0.75em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.results-header {
+  padding-bottom: 0px;
+}
+
+.results-header > .number-of-results {
+  font-size: 0.75em;
+  padding-left: 10px;
+}
+
+.results-header > .close-button {
+  flex: 1 0;
+  text-align: right;
+  font-size: 0.75em;
+  cursor: pointer;
+}
+
+.search-input {
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+  z-index: 2;
+  position: relative;
+  border: 0;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px  #FD3006FF inset;
+  border-radius: 8px;
+}
+
+.search-background {
+  background-color: #4444448a;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.tag-wrapper {
+  display: flex;
+  padding-top: 4px;
+}
+
+.tag-wrapper > .tag {
+  border: 1px solid #444;
+  color: #444;
+  margin-right: 4px;
+  font-size: 0.75em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tag-wrapper > .tag:hover {
+  border: 1px solid #FD3006;
+  color: #FD3006;
+}
