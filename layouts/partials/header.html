@@ -4,24 +4,24 @@
   <meta charset="utf-8">
 
   <!-- favicons-->
-  <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicons/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicons/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicons/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon-76x76.png">
 
-  <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicons/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicons/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicons/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicons/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon-180x180.png">
 
-  <link rel="icon" type="image/png" href="assets/images/favicons/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="assets/images/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/android-chrome-192x192.png" sizes="192x192">
   <link rel="icon" type="image/png" href="/assets/favicons/favicon-194x194.png" sizes="194x194">
-  <link rel="icon" type="image/png" href="assets/images/favicons/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="assets/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/assets/images/favicons/favicon-16x16.png" sizes="16x16">
 
-  <link rel="mask-icon" href="assets/images/favicons/safari-pinned-tab.svg" color="#fe2c06">
+  <link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#fe2c06">
   <link rel="shortcut icon" href="/images/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
@@ -29,7 +29,7 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
 
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ .Site.BaseURL }}index.xml">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ .Site.BaseURL }}/index.xml">
 
   {{ if eq .Permalink "/" }}
     <title>{{ .Title }}</title>
@@ -43,7 +43,7 @@
 
   <meta property="og:url" content="{{ .Permalink }}">
   {{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
-  {{ with .Params.image }}<meta property="og:image" content="{{ $.Site.BaseURL }}images/{{ . }}">{{ end }}
+  {{ with .Params.image }}<meta property="og:image" content="{{ $.Site.BaseURL }}/images/{{ . }}">{{ end }}
 
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Work+Sans:400,500,700,800" rel="stylesheet">
 
@@ -83,22 +83,22 @@
 
   <link
     rel="stylesheet"
-    href='{{ .Site.BaseURL }}css/styles.css?{{ md5 (readFile "/themes/hugo-dgraph-theme/static/css/styles.css") }}'>
+    href='{{ .Site.BaseURL }}/css/styles.css?{{ md5 (readFile "/themes/hugo-dgraph-theme/static/css/styles.css") }}'>
   <link
     rel="stylesheet"
-    href='{{ .Site.BaseURL }}css/custom.css?{{ md5 (readFile "static/css/custom.css") }}'>
+    href='{{ .Site.BaseURL }}/css/custom.css?{{ md5 (readFile "static/css/custom.css") }}'>
 
   <!-- twitter card -->
   {{ if .IsPage }}
     {{ with .Params.image }}
       <meta name="twitter:card" content="summary_large_image"/>
-      <meta name="twitter:image" content="{{ $.Site.BaseURL }}images/{{ . }}"/>
+      <meta name="twitter:image" content="{{ $.Site.BaseURL }}/images/{{ . }}"/>
     {{ else }}
       <meta name="twitter:card" content="summary"/>
     {{ end }}
   {{ else }}
       <meta name="twitter:card" content="summary_large_image"/>
-      <meta name="twitter:image" content="{{ $.Site.BaseURL }}images/diggy-lg.png"/>
+      <meta name="twitter:image" content="{{ $.Site.BaseURL }}/images/diggy-lg.png"/>
   {{ end }}
 
   <meta name="twitter:title" content="{{ .Title }}"/>

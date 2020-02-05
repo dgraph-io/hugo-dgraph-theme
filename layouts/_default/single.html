@@ -310,7 +310,7 @@
         <div class="col-xs-12 offset-xs-0 col-md-10 offset-md-1">
           <img
             class="main__image"
-            src="{{ $.Site.BaseURL }}images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}"
+            src="{{ $.Site.BaseURL }}/images/{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}"
           >
           <div class="article-content">{{ .Content }}</div>
           <div class="article-tag-list">
