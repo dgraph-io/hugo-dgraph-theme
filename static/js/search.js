@@ -1,6 +1,6 @@
 // Algolia vars
-const appId = '2GTU22IEZ3';
-const publicKey = 'da500396d9ce9f97b84ac27fe1a49ad5';
+const appId = 'H10LQ4I695';
+const publicKey = 'b57c0b5231fd34f2077cf00e76cc8f8e';
 const index = 'dgraph_blog';
 
 let showSearch = true;
