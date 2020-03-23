@@ -12,7 +12,7 @@
 				<a href="{{ .Permalink }}" class="no-hover">
 					<div
 							class="img_square"
-							style="background-image: url({{ $.Site.BaseURL }}/images/{{ with .Params.thumbnail }}{{ . }}{{ else }}{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}{{ end }}); {{ with .Params.thumbVerticalPosition }}background-position: 50% {{ . }};{{ end }}">
+							style="background-image: url({{ .Site.BaseURL }}/images/{{ with .Params.thumbnail }}{{ . }}{{ else }}{{ with .Params.image }}{{ . }}{{ else }}default.jpg{{ end }}{{ end }}); {{ with .Params.thumbVerticalPosition }}background-position: 50% {{ . }};{{ end }}">
 					</div>
 				</a>
 			</div>

@@ -168,7 +168,7 @@ $(document.links)
 ></script>
 <script
   type="text/javascript"
-  src='/js/custom.js?{{ md5 (readFile "themes/hugo-dgraph-theme/static/js/custom.js") }}'
+  src='{{ .Site.BaseURL }}/js/custom.js?{{ md5 (readFile "themes/hugo-dgraph-theme/static/js/custom.js") }}'
 ></script>
 
 <script src="//unpkg.com/@dgraph-io/community"></script>
