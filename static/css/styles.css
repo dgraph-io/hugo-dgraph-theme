@@ -233,7 +233,6 @@ hr {
   top: -80px;
   width: 167px;
   height: 147px;
-  background: url("../images/homepage/demo-tip.png") center no-repeat;
   pointer-events: none;
   -webkit-animation-name: rotateTip;
   animation-name: rotateTip;
@@ -908,7 +907,6 @@ nav.breadcrumbs ol li .article-count {
 .article-comment__button.button {
   font-weight: 700;
   padding: 15px 30px;
-  background-image: url("../images/png-icons/icon-comment.png");
   background-repeat: no-repeat;
   background-position: 15px center;
   padding-left: 40px;
@@ -1119,7 +1117,6 @@ nav.breadcrumbs ol li .article-count {
   -moz-appearance: none;
   outline: none;
   border: none;
-  background-image: url("../images/png-icons/form-search.png");
   background-repeat: no-repeat;
   background-position: 10px center;
 }
@@ -1398,7 +1395,6 @@ nav.breadcrumbs ol li .article-count {
 }
 .cta__box--contact {
   position: relative;
-  background-image: url("../images/contact/new-york.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1478,27 +1474,6 @@ nav.breadcrumbs ol li .article-count {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-}
-.cta__more-link--github:before {
-  background-image: url("../images/png-icons/icon-github.png");
-}
-.cta__more-link--gitter:before {
-  background-image: url("../images/png-icons/icon-gitter.png");
-}
-.cta__more-link--discourse:before {
-  background-image: url("../images/png-icons/icon-discourse.png");
-}
-.cta__more-link--slack:before {
-  background-image: url("../images/png-icons/icon-slack.png");
-}
-.cta__more-link--blog:before {
-  background-image: url("../images/png-icons/icon-dgraph.png");
-}
-.cta__more-link--email:before {
-  background-image: url("../images/png-icons/icon-email.png");
-}
-.cta__more-link--wiki:before {
-  background-image: url("../images/png-icons/icon-wiki.png");
 }
 .cta__next {
   margin-top: 50px;
