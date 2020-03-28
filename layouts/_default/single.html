@@ -349,7 +349,11 @@
   <script type="text/javascript">
 DiscourseEmbed = {
   discourseUrl: "{{.Site.Params.discourse}}",
+  {{ if .Params.discuss -}}
+  topicId: {{ .Params.discuss }}
+  {{ else -}}
   discourseEmbedUrl: "{{ .Permalink }}"
+  {{ end -}}
 };
 (function() {
   var d = document.createElement("script");
