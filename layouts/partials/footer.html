@@ -59,49 +59,18 @@
       </div>
     </div>
 
-    <div class="github-engage">
-      <div class="line1">Do you like our blog?</div>
-      <a class="github-close" href="javascript:void(0)">
-        <i class="fa fas fa-times"></i>
-      </a>
-
-      <div id="star-us-wrapper">
-        <a
-            class="github-button"
-            href="https://github.com/dgraph-io/dgraph"
-            data-size="large" data-show-count="true"
-            aria-label="Star dgraph-io/dgraph on GitHub">
-          Star us on GitHub
-        </a>
-      </div>
-      <div class="love">
-        <div class="heart-wrapper">
-          <div class="heart">
-            <div class="tl"></div>
-            <div class="tr"></div>
-            <div class="bl"></div>
-            <div class="br"></div>
-          </div>
-          <div class="ring"></div>
-          <div class="circles"></div>
-        </div>
-
-        <div class="love-text">
-          We Love You!
-        </div>
-      </div>
-    </div>
+  {{ partial "github_engage_widget.html" . }}
   </footer>
   <!-- / page-footer-->
 </div>
 
-    <script src="{{ .Site.BaseURL }}/js/clipboard.min.js"></script>
-    <script
-      src='{{ .Site.BaseURL }}/js/runnable.js?{{ md5 (readFile "themes/hugo-dgraph-theme/static/js/runnable.js") }}'
-    ></script>
-    <script>
-      hljs.initHighlightingOnLoad();
-    </script>
+<script src="{{ .Site.BaseURL }}/js/clipboard.min.js"></script>
+<script
+  src='{{ .Site.BaseURL }}/js/runnable.js?{{ md5 (readFile "themes/hugo-dgraph-theme/static/js/runnable.js") }}'
+></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
 
 {{ if .Site.Params.keenIoProjectId }}
 <script crossorigin src="https://cdn.jsdelivr.net/npm/keen-tracking@4"></script>
@@ -151,25 +120,6 @@ $(document.links)
   })
   .attr("target", "_blank");
 </script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/visibility.js/1.2.4/visibility.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-<link
-  href='{{ .Site.BaseURL }}/css/heart.css?{{ md5 (readFile "themes/hugo-dgraph-theme/static/css/heart.css") }}'
-  rel="stylesheet">
-<link
-  href='{{ .Site.BaseURL }}/css/github-engage.css?{{ md5 (readFile "themes/hugo-dgraph-theme/static/css/github-engage.css") }}'
-  rel="stylesheet">
-
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"
-  integrity="sha256-7/yoZS3548fXSRXqc/xYzjsmuW3sFKzuvOCHd06Pmps="
-  crossorigin="anonymous"
-></script>
-<script
-  type="text/javascript"
-  src='{{ .Site.BaseURL }}/js/custom.js?{{ md5 (readFile "themes/hugo-dgraph-theme/static/js/custom.js") }}'
-></script>
 
 <script src="//unpkg.com/@dgraph-io/community"></script>
 
